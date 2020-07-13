@@ -7,8 +7,8 @@
   <meta name="author" content="Anna Lee">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Saved news</title>
-  <link rel="stylesheet" href="./pages/savednews.css">
-  <link rel="icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.savednews.css %>">
+  <link rel="icon" href="<%=require('./images/favicon.png').default %>">
 </head>
 <body>
   <div class="root">
@@ -89,7 +89,7 @@
           </div>
           <div class="card">
             <div class="card__image">
-              <img src="./images/card3.png" class="card__icon" alt="Taiga">
+              <img src="<%=require('./images/card3.png').default %>" class="card__icon" alt="Taiga">
               <div class="card__button-case">
                 <button class="button card__button-login
                 card__button_state_disabled card__button-login_fontsize_medium
@@ -111,7 +111,7 @@
           </div>
           <div class="card">
             <div class="card__image">
-              <img src="./images/card1.png" class="card__icon" alt="Parks">
+              <img src=<%=require('./images/card1.png').default %>" class="card__icon" alt="Parks">
               <div class="card__button-case">
                 <button class="button card__button-login
                 card__button_state_disabled card__button-login_fontsize_medium
@@ -133,7 +133,7 @@
           </div>
           <div class="card">
             <div class="card__image">
-              <img src="./images/card2.png" class="card__icon" alt="Nature">
+              <img src="<%=require('./images/card2.png').default %>" class="card__icon" alt="Nature">
               <div class="card__button-case">
                 <button class="button card__button-login
                 card__button_state_disabled card__button-login_fontsize_medium
@@ -172,12 +172,12 @@
         <ul class="footer__icons">
           <li class="footer__item">
             <a href="https://github.com/leannalight" class="footer__link" target="_blank">
-              <img src="images/github.svg" class="footer__icon" alt="GitHub">
+              <img src="<%=require('./images/github.svg').default %>" class="footer__icon" alt="GitHub">
             </a>
           </li>
           <li class="footer__item">
             <a href="https://facebook.com" class="footer__link" target="_blank">
-              <img src="images/fb.svg" class="footer__icon" alt="Facebook">
+              <img src="<%=require('./images/fb.svg').default %>" class="footer__icon" alt="Facebook">
             </a>
           </li>
         </ul>

@@ -9,10 +9,11 @@ const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
     entry: {
         main: './src/index.js',
+        savednews: './src/savednews.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[chunkhash].js'
+        filename: '[name]/[name].[contenthash].js'
     },
     module: {
         rules: [{
@@ -50,7 +51,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({ filename: 'index.[contenthash].css' }),
+        new MiniCssExtractPlugin({ filename: '[name]/[name].[contenthash].css' }),
         new OptimizeCssAssetsPlugin({
           assetNameRegExp: /\.css$/g,
           cssProcessor: require('cssnano'),
@@ -60,9 +61,16 @@ module.exports = {
           canPrint: true
         }),
         new HtmlWebpackPlugin({
-          inject: false,
+          inject: true,
           template: './src/index.html',
-          filename: 'index.html'
+          chunks: ['main'],
+          filename: './index.html'
+      }),
+        new HtmlWebpackPlugin({
+          inject: true,
+          template: './src/savednews.html',
+          chunks: ['savednews'],
+          filename: './savednews.html'
       }),
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({

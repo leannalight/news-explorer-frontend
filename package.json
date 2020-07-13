@@ -1,6 +1,6 @@
 {
   "name": "news-explorer-frontend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "frontend for Yandex Diploma",
   "main": "./src/index.js",
   "scripts": {

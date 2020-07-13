@@ -1,4 +1,4 @@
-# news-explorer-frontend v0.0.1
+# news-explorer-frontend v0.0.2
 
 ## Фронтенд к дипломному проекту News Explorer для Яндекс.Практикум.
 
