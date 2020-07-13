@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
     entry: {
-        main: './src/index.js'
+        main: './src/index.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -50,7 +50,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({ filename: 'style.[contenthash].css' }),
+        new MiniCssExtractPlugin({ filename: 'index.[contenthash].css' }),
         new OptimizeCssAssetsPlugin({
           assetNameRegExp: /\.css$/g,
           cssProcessor: require('cssnano'),

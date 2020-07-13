@@ -7,8 +7,8 @@
   <meta name="author" content="Anna Lee">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Main</title>
-  <link rel="stylesheet" href="./pages/index.css">
-  <link rel="icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <link rel="icon" href="<%=require('./images/favicon.png').default %>">
 </head>
 <body>
   <div class="root">
@@ -28,7 +28,7 @@
             </li>
             <li class="menu__item menu__item_status_unlogin">
               <button class="button menu__button">Грета
-                <img class="menu__icon-logout" src="./images/logout.png" alt="logout">
+                <img class="" src="<%=require('menu__icon-logout').default %>" alt="logout">
               </button>
             </li>
             <li class="menu__item">
@@ -53,7 +53,7 @@
         <div class="results__card-case">
           <div class="card">
             <div class="card__image">
-              <img src="./images/parks.png" class="card__icon" alt="Parks">
+              <img src="<%=require('./images/parks.png').default %>" class="card__icon" alt="Parks">
               <div class="card__button-case">
                 <button class="button card__button-login card__button_state_disabled">
                   Войдите, чтобы сохранять статьи</button>
@@ -70,7 +70,7 @@
 
           <div class="card">
             <div class="card__image">
-              <img src="./images/nature.png" class="card__icon" alt="Nature">
+              <img src="<%=require('./images/nature.png').default %>" class="card__icon" alt="Nature">
               <div class="card__button-case">
                 <button class="button card__button-login card__button_state_disabled">
                   Войдите, чтобы сохранять статьи</button>
@@ -86,7 +86,7 @@
           </div>
           <div class="card">
             <div class="card__image">
-              <img src="./images/taiga.png" class="card__icon" alt=""Taiga>
+              <img src="<%=require('./images/taiga.png').default %>" class="card__icon" alt=""Taiga>
               <div class="card__button-case">
                 <button class="button card__button-login card__button_state_disabled">
                   Войдите, чтобы сохранять статьи</button>
@@ -107,7 +107,7 @@
           <p class="circle-preloader__text">Идет поиск новостей...</p>
         </div>
         <div class="results__nothing">
-          <img src="./images/not-found_v1.png" class="results__not-logo" alt="Gloomy face">
+          <img src="<%=require('./images/not-found_v1.png').default %>" class="results__not-logo" alt="Gloomy face">
           <h2 class="results__not-title">Ничего не найдено</h2>
           <p class="results__not-text">К сожалению по вашему запросу
             ничего не найдено.</p>
@@ -116,7 +116,7 @@
 
       <section class="author">
         <div class="author__avatar">
-          <img src="./images/avatar.png" alt="authors photo" class="author__photo">
+          <img src="<%=require('./images/avatar.png').default %>" alt="authors photo" class="author__photo">
         </div>
         <div class="author__about">
           <h2 class="author__title">Об авторе</h2>
@@ -132,7 +132,7 @@
     <!-- Формы попап -->
     <div class="popup popup_login">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="Close icon" class="popup__close">
+        <img src="<%=require('./images/close.svg').default %>" alt="Close icon" class="popup__close">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="signin" id="signin">
           <div class="input-container">
@@ -158,7 +158,7 @@
     </div>
     <div class="popup popup_signup">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="Close icon" class="popup__close">
+        <img src="<%=require('./images/close.svg').default %>" alt="Close icon" class="popup__close">
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup" id="signup">
           <div class="input-container">
@@ -191,7 +191,7 @@
 
     <div class="popup popup_success popup_is_opened">
       <div class="popup__content popup__content_size_small">
-        <img src="./images/close.svg" alt="Close icon" class="popup__close">
+        <img src="<%=require('./images/close.svg').default %>" alt="Close icon" class="popup__close">
         <h3 class="popup__tile popup__title_size_small">Пользователь успешно зарегистрирован</h3>
         <a href="#" class="popup__text">Выполнить вход</a>
       </div>
@@ -212,12 +212,12 @@
         <ul class="footer__icons">
           <li class="footer__item">
             <a href="https://github.com/leannalight" class="footer__link" target="_blank">
-              <img src="images/github.svg" class="footer__icon" alt="GitHub">
+              <img src="<%=require('images/github.svg').default %>" class="footer__icon" alt="GitHub">
             </a>
           </li>
           <li class="footer__item">
             <a href="https://facebook.com" class="footer__link" target="_blank">
-              <img src="images/fb.svg" class="footer__icon" alt="Facebook">
+              <img src="<%=require('images/fb.svg').default %>" class="footer__icon" alt="Facebook">
             </a>
           </li>
         </ul>
