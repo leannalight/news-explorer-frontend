@@ -1,0 +1,6 @@
+.header__section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 80px;
+}

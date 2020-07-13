@@ -1,0 +1,13 @@
+@import url(../results/__title/results__title.css);
+@import url(../results/__card-case/results__card-case.css);
+@import url(../results/__button/results__button.css);
+@import url(../results/__loading/results__loading.css);
+@import url(../results/__nothing/results__nothing.css);
+@import url(../results/__not-logo/results__not-logo.css);
+@import url(../results/__not-title/results__not-title.css);
+@import url(../results/__not-text/results__not-text.css);
+
+.results {
+  padding-top: 80px;
+  background: #f5f6f7;
+}

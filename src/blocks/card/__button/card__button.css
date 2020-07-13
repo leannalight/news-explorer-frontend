@@ -1,0 +1,5 @@
+.card__button {
+background-image: url(/images/bookmark.svg);
+background: #fff;
+border-radius: 8px;
+}

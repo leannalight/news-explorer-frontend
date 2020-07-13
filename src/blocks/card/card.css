@@ -1,0 +1,16 @@
+@import url(../card/__image/card__image.css);
+@import url(../card/__button-case/card__button-case.css);
+@import url(../card/__button/card__button.css);
+@import url(../card/__button-login/card__button-login.css);
+@import url(../card/__date/card__date.css);
+@import url(../card/__title/card__title.css);
+@import url(../card/__text/card__text.css);
+@import url(../card/__source/card__source.css);
+
+.card {
+  width: 400px;
+  min-height: 576px;
+  object-fit: cover;
+  border-radius: 16px;
+  background-color: #fff;
+}
