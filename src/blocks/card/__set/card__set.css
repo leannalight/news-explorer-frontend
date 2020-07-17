@@ -1,0 +1,5 @@
+.card__set {
+  display: flex;
+  margin: 0;
+  padding: 24px 24px;
+}

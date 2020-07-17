@@ -1,7 +1,10 @@
 .results__button {
+  padding: 0;
+  margin: 64px auto 80px;
   width: 288px;
   height: 64px;
   background: #fff;
+  border: none;
   border-radius: 80px;
   font-family: Roboto;
   font-style: normal;
@@ -9,5 +12,11 @@
   font-size: 18px;
   line-height: 24px;
   text-align: center;
-  margin: 0 auto;
+  display: block;
 }
+
+.results__button:hover {
+  background: #fff;
+  opacity: 0.9;
+}
+

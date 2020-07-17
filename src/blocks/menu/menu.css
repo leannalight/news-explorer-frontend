@@ -1,10 +1,15 @@
 @import url(../menu/__item/menu__item.css);
 @import url(../menu/__link/menu__link.css);
 @import url(../menu/__link/_colour/menu__link_colour_white.css);
+@import url(../menu/__link/_active/menu__link_active.css);
+@import url(../menu/__link/_hidden/menu__link_hidden.css);
 @import url(../menu/__button/menu__button.css);
+@import url(../menu/__button/_hidden/menu__button_hidden.css);
+@import url(../menu/__button-auth/menu__button-auth.css);
 @import url(../menu/__icon-logout/menu__icon-logout.css);
 
 .menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }

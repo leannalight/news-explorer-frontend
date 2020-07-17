@@ -6,4 +6,12 @@
 .author {
   display: flex;
   padding: 80px 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .author {
+    flex-direction: column;
+  }
 }

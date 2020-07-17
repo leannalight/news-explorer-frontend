@@ -1,13 +1,23 @@
 .menu__button {
-  min-height: 48px;
+  width: 112px;
+  height: 48px;
   border: 1px solid #FFFFFF;
+  background: none;
   box-sizing: border-box;
   border-radius: 100px;
-  font-family: Roboto;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   text-align: center;
-  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.menu__button:hover {
+  color: #B6BCBF;
+  border: 1px solid #B6BCBF;
 }

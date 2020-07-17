@@ -1,16 +1,40 @@
 @import url(../card/__image/card__image.css);
-@import url(../card/__button-case/card__button-case.css);
-@import url(../card/__button/card__button.css);
-@import url(../card/__button-login/card__button-login.css);
+@import url(../card/__set/card__set.css);
+@import url(../card/__name/card__name.css);
+@import url(../card/__name/_shown/card__name_shown.css);
+@import url(../card/__name/_hidden/card__name_hidden.css);
+@import url(../card/__name-is/card__name-is.css);
+@import url(../card/__login/card__login.css);
+@import url(../card/__login-text/card__login-text.css);
+@import url(../card/__login-saved/card__login-saved.css);
+@import url(../card/__state/card__state.css);
+@import url(../card/__state-delete/card__state-delete.css);
+@import url(../card/__info/card__info.css);
 @import url(../card/__date/card__date.css);
 @import url(../card/__title/card__title.css);
 @import url(../card/__text/card__text.css);
 @import url(../card/__source/card__source.css);
 
 .card {
-  width: 400px;
+  max-width: 400px;
   min-height: 576px;
   object-fit: cover;
   border-radius: 16px;
   background-color: #fff;
+  overflow: hidden;
+  transition: transforn 1s;
+}
+
+@media screen and (max-width: 1023px) {
+  .card {
+    width: 240px;
+    min-height: 420px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    width: 288px;
+    min-height: 440px;
+  }
 }

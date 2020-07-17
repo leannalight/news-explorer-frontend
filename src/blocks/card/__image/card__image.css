@@ -1,3 +1,8 @@
 .card__image {
+  width: 100%;
+  min-height: 272px;
+  background-image: url('../../../images/parks.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   cursor: pointer;
 }

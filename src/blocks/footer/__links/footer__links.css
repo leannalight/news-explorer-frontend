@@ -2,4 +2,6 @@
   display: flex;
   justify-content: space-between;
   max-width: 304px;
+  margin: 0;
+  padding: 0;
 }

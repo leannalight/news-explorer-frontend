@@ -1,0 +1,22 @@
+.menu__button-auth {
+  width: 176px;
+  height: 48px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.menu__button-auth:hover {
+  color: #B6BCBF;
+  border: 1px solid #B6BCBF;
+}

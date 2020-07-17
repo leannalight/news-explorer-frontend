@@ -1,0 +1,11 @@
+@import url(../../header/__menu-mob-icon/_active/.header__menu-mob-icon_active.css);
+
+.header__menu-mob-icon {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header__menu-mob-icon {
+    display: inline;
+  }
+}
