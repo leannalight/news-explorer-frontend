@@ -6,3 +6,12 @@
   flex-wrap: nowrap;
   margin: 0 104px;
 }
+
+@media screen and (max-width: 767px) {
+  .footer__case {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 16px;
+    height: 100%;
+  }
+}

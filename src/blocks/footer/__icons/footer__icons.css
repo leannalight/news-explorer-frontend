@@ -1,8 +1,8 @@
 .footer__icons {
   display: flex;
   list-style: none;
-  max-width: 70px;
   margin: 0;
   padding: 0;
+  order: 0;
 }
 

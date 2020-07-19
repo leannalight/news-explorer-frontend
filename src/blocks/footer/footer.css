@@ -11,3 +11,9 @@
   width: 100%;
   background: #fff;
 }
+
+@media screnn and (max-width: 767px) {
+  .footer {
+    line-height: 48px;
+  }
+}
