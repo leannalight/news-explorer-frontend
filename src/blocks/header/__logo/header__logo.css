@@ -1,9 +1,20 @@
 .header__logo {
-  font-family: Roboto Slab;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
   margin: 30px 0 0 104px;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    margin: 23px 0 0 40px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .header__logo {
+    margin: 16px 0 0 16px;
+  }
 }

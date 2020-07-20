@@ -4,8 +4,8 @@
   display: block;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .search__form {
-    margin-top: calc( (100vw - 320px)/(768 - 320) * (48-122) - 122px);
+    margin-top: 48px;
   }
 }

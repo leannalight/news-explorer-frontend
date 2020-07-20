@@ -4,17 +4,20 @@
 @import url(../header/__logo/header__logo.css);
 
 .header {
-  max-width: 100%;
+  max-width: 1440px;
   min-height: 576px;
   align-items: center;
   background-image: url(../../images/cover.png);
   background-size: cover;
-  background-position: 50%;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
 }
 
-@media screen and (max-width: 767px) {
-
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 768px;
+    min-height: 400px;
+  }
 }

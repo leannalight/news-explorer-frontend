@@ -6,7 +6,7 @@
   <meta name="description" content="News Explorer application">
   <meta name="author" content="Anna Lee">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Main</title>
+  <title>News Explorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
   <link rel="icon" href="<%=require('./images/favicon.png').default %>">
 </head>
@@ -43,7 +43,7 @@
         <p class="search__subtitle">Находите самые свежие статьи на любую
           тему и сохраняйте в своём личном кабинете.</p>
         <form class="search__form" name="search-form" method="post">
-          <input type="text" placeholder="Введите тему новости" class="search__input">
+          <input type="text" name="search" placeholder="Введите тему новости" class="search__input" minlength="2" required>
           <button class="button search__button">Искать</button>
         </form>
       </div>
