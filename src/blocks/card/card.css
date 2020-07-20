@@ -21,9 +21,7 @@
 
 .card {
   max-width: 400px;
-  width: calc( (100vw - 768px)/(1440 - 768) * (400 - 224) + 224px);
   max-height: 576px;
-  height: calc( (100vw - 768px)/(1440 - 768) * (576 - 420) + 420px);
   object-fit: cover;
   border-radius: 16px;
   background-color: #fff;
@@ -31,7 +29,7 @@
   transition: transforn 1s;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .card {
     width: 224px;
     height: 420px;
