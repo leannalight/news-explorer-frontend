@@ -6,3 +6,13 @@
   background-repeat: no-repeat;
   cursor: pointer;
 }
+@media screen and (max-width: 1024px) {
+  .card__image {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .card__image {
+    height: 196px;
+  }
+}

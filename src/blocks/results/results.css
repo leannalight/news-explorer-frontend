@@ -1,3 +1,4 @@
+@import url(../results/__show-case/results__show-case.css);
 @import url(../results/__title/results__title.css);
 @import url(../results/__card-case/results__card-case.css);
 @import url(../results/__button/results__button.css);
@@ -10,4 +11,19 @@
 .results {
   padding-top: 80px;
   background: #f5f6f7;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+}
+
+.results__show-case_hidden {
+  display: none;
+}
+
+.results__loading_hidden {
+  display: none;
+}
+
+.results__nothing_hidden {
+  display: none;
 }

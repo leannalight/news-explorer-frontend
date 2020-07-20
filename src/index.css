@@ -11,3 +11,6 @@
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/footer/footer.css);
 
+body {
+  margin: 0;
+}

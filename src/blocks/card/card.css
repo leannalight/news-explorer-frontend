@@ -5,6 +5,10 @@
 @import url(../card/__name/_hidden/card__name_hidden.css);
 @import url(../card/__name-is/card__name-is.css);
 @import url(../card/__login/card__login.css);
+@import url(../card/__image/card__image.css);
+@import url(../card/__set/card__set.css);
+@import url(../card/__name/card__name.css);
+@import url(../card/__name-is/card__name-is.css);
 @import url(../card/__login-text/card__login-text.css);
 @import url(../card/__login-saved/card__login-saved.css);
 @import url(../card/__state/card__state.css);
@@ -17,7 +21,9 @@
 
 .card {
   max-width: 400px;
-  min-height: 576px;
+  width: calc( (100vw - 768px)/(1440 - 768) * (400 - 224) + 224px);
+  max-height: 576px;
+  height: calc( (100vw - 768px)/(1440 - 768) * (576 - 420) + 420px);
   object-fit: cover;
   border-radius: 16px;
   background-color: #fff;
@@ -27,14 +33,13 @@
 
 @media screen and (max-width: 1023px) {
   .card {
-    width: 240px;
-    min-height: 420px;
+    width: 224px;
+    height: 420px;
   }
 }
-
 @media screen and (max-width: 767px) {
   .card {
     width: 288px;
-    min-height: 440px;
+    height: 440px;
   }
 }
