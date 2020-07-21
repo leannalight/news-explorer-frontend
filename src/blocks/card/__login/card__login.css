@@ -5,8 +5,7 @@
   border-radius: 10px;
   display: flex;
   align-items: center;
-  margin-right: 5px;
-  margin-left: auto;
+  margin: 0 5px 0 auto;
   padding: 0 8px;
 }
 

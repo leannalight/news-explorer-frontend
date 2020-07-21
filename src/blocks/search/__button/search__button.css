@@ -36,13 +36,7 @@
   }
 }
 
-@media screen and (max-width: 470px) {
-  .search__button {
-    max-width: 90%;
-  }
-}
-
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 520px) {
   .search__button {
     max-width: 288px;
   }

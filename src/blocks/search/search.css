@@ -19,7 +19,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 520px) {
   .search {
     margin-top: 30px;
     margin-bottom: 32px;
