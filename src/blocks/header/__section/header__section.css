@@ -1,6 +1,13 @@
 .header__section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .header__section {
+    min-height: 66px;
+  }
 }
