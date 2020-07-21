@@ -14,8 +14,8 @@
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 425px) {
   .header__logo {
-    margin: 16px 0 0 16px;
+    margin: 0 0 0 16px;
   }
 }

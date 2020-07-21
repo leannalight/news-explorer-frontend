@@ -6,6 +6,15 @@
 
 @media screen and (max-width: 767px) {
   .header__menu-mob-icon {
-    display: inline;
+    display: block;
+    position: absolute;
+    margin: 0 40px 0 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__menu-mob-icon {
+    margin: 0 16px 0 0;
   }
 }

@@ -7,11 +7,9 @@
   margin: 0 104px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .footer__case {
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0 16px;
-    height: 100%;
+    margin: 0 40px;
+    min-height: 64px;
   }
 }

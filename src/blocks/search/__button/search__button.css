@@ -35,3 +35,15 @@
     top: 0;
   }
 }
+
+@media screen and (max-width: 470px) {
+  .search__button {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .search__button {
+    max-width: 288px;
+  }
+}
