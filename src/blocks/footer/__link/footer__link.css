@@ -10,10 +10,16 @@
   margin-left: 40px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  .footer__link {
+    line-height: 48px;
+    margin-left: 25px;
+  }
+}
+
+@media screen and (max-width: 520px) {
   .footer__link {
     line-height: 48px;
     margin-left: 0;
-    margin-right: 30px;
   }
 }

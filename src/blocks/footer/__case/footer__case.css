@@ -13,3 +13,12 @@
     min-height: 64px;
   }
 }
+
+@media screen and (max-width: 520px) {
+  .footer__case {
+    position: relative;
+    flex-direction: column-reverse;
+    margin: 20px 16px 30px;
+    min-height: 176px;
+  }
+}

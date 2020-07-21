@@ -11,3 +11,11 @@
     margin-bottom: 38px;
   }
 }
+
+@media screen and (max-width: 520px) {
+  .footer__links {
+    flex-direction: column;
+    width: 200px;
+    min-height: 74px;
+  }
+}
