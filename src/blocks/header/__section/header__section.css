@@ -2,5 +2,5 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
 }

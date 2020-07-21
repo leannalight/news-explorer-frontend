@@ -9,11 +9,9 @@
 @import url(../results/__not-text/results__not-text.css);
 
 .results {
-  padding-top: 80px;
+  padding: 80px 7%;
   background: #f5f6f7;
-  margin: 0 auto;
-  display: grid;
-  grid-template-rows: repeat(3, auto);
+  margin: 0;
 }
 
 .results__show-case_hidden {
@@ -26,4 +24,23 @@
 
 .results__nothing_hidden {
   display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .results {
+    padding: 5.2%;
+    background: #f5f6f7;
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+    margin: 0;
+  }
 }

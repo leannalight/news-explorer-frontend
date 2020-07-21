@@ -14,9 +14,8 @@
 
 @media screen and (max-width: 768px) {
   .search {
-    margin-top: calc( (100vw - 320px)/(768 - 320) * (104 - 86) + 86px);
-    margin-bottom: 48px;
-    width: calc( (100vw - 320px)/(768 - 320) * (448 - 288) + 86px);
+    margin: 38px auto 48px;
+    width: 452px;
   }
 }
 

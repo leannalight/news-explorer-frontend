@@ -1,4 +1,5 @@
 .results__show-case {
   max-width: 1248px;
-  margin: auto;
+  margin: 0;
+  padding: 0;
 }

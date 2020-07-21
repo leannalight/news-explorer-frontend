@@ -10,9 +10,17 @@
     grid-gap: 8px 8px;
   }
 }
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 700px) {
   .results__card-case {
-    grid-template-columns: 288px;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .results__card-case {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 }

@@ -13,6 +13,12 @@
     margin: 23px 0 0 40px;
   }
 }
+@media screen and (max-width: 700px) {
+  .header__logo {
+    margin: 0 0 0 40px;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .header__logo {
     margin: 16px 0 0 16px;

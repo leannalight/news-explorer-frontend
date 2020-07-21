@@ -1,11 +1,22 @@
 .results__title {
-  margin-top: 0;
-  margin-left: 104px;
-  margin-bottom: 64px;
-  font-family: Roboto Slab;
+  margin: 0 0 64px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
   color: #1a1b22;
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .results__title {
+    margin: 0 0 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .results__title {
+    margin: 0 0 24px;
+  }
 }
