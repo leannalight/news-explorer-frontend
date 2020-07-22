@@ -1,0 +1,7 @@
+@import url(./_colour/menu__link_colour_white.css);
+@import url(./_colour/menu__link_colour_black.css);
+
+.menu__link {
+  margin-right: 32px;
+  text-decoration: none;
+}

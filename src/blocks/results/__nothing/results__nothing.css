@@ -1,0 +1,8 @@
+.results__nothing {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 86px;
+  padding-bottom: 0;
+  background: #f5f6f7;
+}

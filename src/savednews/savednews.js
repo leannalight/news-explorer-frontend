@@ -1,0 +1,1 @@
+import './savednews.css';

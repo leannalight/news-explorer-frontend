@@ -1,0 +1,24 @@
+.footer__case {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0 104px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__case {
+    margin: 0 40px;
+    min-height: 64px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .footer__case {
+    position: relative;
+    flex-direction: column-reverse;
+    margin: 20px 16px 30px;
+    min-height: 176px;
+  }
+}

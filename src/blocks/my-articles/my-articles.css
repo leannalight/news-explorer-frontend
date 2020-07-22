@@ -1,0 +1,7 @@
+@import url(../my-articles/__card-case/my-articles__card-case.css);
+
+.my-articles {
+ padding-top: 62px;
+ padding-bottom: 62px;
+ background: #F5F6F7;
+}

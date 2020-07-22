@@ -1,0 +1,11 @@
+.search__form {
+  position: relative;
+  margin-top: calc( (100vw - 768px)/(1440 - 768) * (64 - 48) + 48px);
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .search__form {
+    margin-top: 48px;
+  }
+}

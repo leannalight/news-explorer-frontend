@@ -1,0 +1,12 @@
+.menu__link_colour_white {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.menu__link_colour_white:hover {
+  color: #B6BCBF;
+}

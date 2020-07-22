@@ -1,0 +1,46 @@
+@import url(../card/__image/card__image.css);
+@import url(../card/__name/card__name.css);
+@import url(../card/__name/_shown/card__name_shown.css);
+@import url(../card/__name/_hidden/card__name_hidden.css);
+@import url(../card/__name-is/card__name-is.css);
+@import url(../card/__login/card__login.css);
+@import url(../card/__set/card__set.css);
+@import url(../card/__login-text/card__login-text.css);
+@import url(../card/__login-saved/card__login-saved.css);
+@import url(../card/__state/card__state.css);
+@import url(../card/__state-delete/card__state-delete.css);
+@import url(../card/__info/card__info.css);
+@import url(../card/__date/card__date.css);
+@import url(../card/__title/card__title.css);
+@import url(../card/__text/card__text.css);
+@import url(../card/__source/card__source.css);
+
+.card {
+  max-width: 400px;
+  max-height: 576px;
+  object-fit: cover;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: transforn 1s;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    max-width: 300px;
+    max-height: 440px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 224px;
+    max-height: 420px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .card {
+    max-width: 288px;
+    max-height: 440px;
+    margin-bottom: 10px;
+  }
+}

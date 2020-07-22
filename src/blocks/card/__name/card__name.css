@@ -1,0 +1,16 @@
+.card__name {
+  width: 112px;
+  height: 40px;
+  background: #fff;
+  border-radius: 10px;
+  align-items: center;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}

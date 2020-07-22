@@ -1,0 +1,5 @@
+.header__section_theme_white {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

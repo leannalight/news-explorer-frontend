@@ -1,0 +1,18 @@
+.card__set {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 24px 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .card__set {
+    padding: 8px 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__set {
+    padding: 16px 16px;
+  }
+}

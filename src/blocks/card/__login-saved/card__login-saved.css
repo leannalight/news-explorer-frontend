@@ -1,0 +1,10 @@
+.card__login-saved {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+  border-radius: 10px;
+  margin: 0 auto;
+}

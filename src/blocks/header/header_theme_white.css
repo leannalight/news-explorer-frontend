@@ -1,0 +1,11 @@
+@import url(../header/__section/header__section_theme_white.css);
+@import url(../header/__menu-mob-icon/header__menu-mob-icon.css);
+@import url(../header/__logo/_colour/header__logo_colour_black.css);
+@import url(../header/__nav/header__nav.css);
+
+.header_theme_white {
+  max-width: 100%;
+  min-height: 80px;
+  align-items: center;
+  background: #fff;
+}

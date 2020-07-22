@@ -1,0 +1,23 @@
+@import url(../header/__section/header__section.css);
+@import url(../header/__menu-mob-icon/header__menu-mob-icon.css);
+@import url(../header/__nav/header__nav.css);
+@import url(../header/__logo/header__logo.css);
+
+.header {
+  max-width: 1440px;
+  min-height: 576px;
+  align-items: center;
+  background-image: url(../../images/cover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 100%;
+    min-height: 400px;
+  }
+}
