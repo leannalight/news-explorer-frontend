@@ -20,12 +20,12 @@
           <nav class="header__nav">
             <ul class="menu menu_hidden">
               <li class="menu__item">
-                <a href="index.html" class="menu__link
+                <a href="index.html" class="link menu__link
                   menu__link_colour_white
                   menu__link_active" target="_blank">Главная</a>
               </li>
               <li class="menu__item">
-                <a href="savednews.html" class="menu__link
+                <a href="savednews.html" class="link savednews menu__link
                   menu__link_colour_white menu__link_hidden" target="_blank">Сохранённые статьи</a>
               </li>
               <li class="menu__item">
@@ -142,6 +142,7 @@
         </section>
       </main>
       <!-- Формы попап -->
+      <!-- Login Popup -->
       <div class="popup popup__login popup_hidden">
         <div class="popup__content">
           <img src="<%=require('./images/close.svg').default %>" alt="Close icon" class="popup__close">
@@ -162,12 +163,14 @@
               <span class="popup__error-message">Длина пароля должна быть от 8 до 30 символов</span>
             </div>
             <button type="submit" class="button popup__button">Войти</button>
-            <div class="popup__input-container">
-              <span class="popup__text">или</span><a href="#" class="popup__connect">Зарегистрироваться</a>
+            <div class="popup__text-case">
+              <span class="popup__text">или</span>
+              <a href="#" class="popup__connect">Зарегистрироваться</a>
             </div>
           </form>
         </div>
       </div>
+      <!-- Signup Popup -->
       <div class="popup popup__signup popup_hidden">
         <div class="popup__content">
           <img src="<%=require('./images/close.svg').default %>" alt="Close icon" class="popup__close">
@@ -193,12 +196,14 @@
               <span class="popup__error-message">Длина имени должна быть от 2 до 30 символов</span>
             </div>
             <button type="submit" class="button popup__button">Зарегистрироваться</button>
-            <div class="input-container">
-              <span class="popup__text">или</span><a href="#" class="popup__connect">Войти</a>
+            <div class="popup__text-case">
+              <span class="popup__text">или</span>
+              <a href="#" class="popup__connect">Войти</a>
             </div>
           </form>
         </div>
       </div>
+      <!-- Success Popup -->
       <div class="popup popup__success popup_hidden">
         <div class="popup__content">
           <img src="<%=require('./images/close.svg').default %>" alt="Close icon" class="popup__close">

@@ -1,5 +1,7 @@
 .popup__error-message {
-  font-family: Inter;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  display: none;
+  margin-top: 10px;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

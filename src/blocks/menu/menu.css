@@ -25,7 +25,7 @@
   .menu_hidden {
     display: none;
   }
-  menu__shown {
+  .menu_shown {
     display: flex;
   }
 }
