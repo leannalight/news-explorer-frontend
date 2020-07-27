@@ -2,11 +2,18 @@ export class Header {
   constructor(options) {
     // color - цвет шапки
     const {
-      color, header, authButton,
-      mobMenuButton, mobMenu,
-      headerAuthText, iconLogout,
-      signupPopup, savednewsLink,
+      color,
+      header,
+      authButton,
+      usernameButton,
+      mobMenuButton,
+      mobMenu,
+      headerAuthText,
+      iconLogout,
+      signupPopup,
+      savednewsLink,
     } = options;
+
     this.header = header;
     this.color = color;
     this.authButton = authButton;
@@ -16,6 +23,7 @@ export class Header {
     this.headerAuthText = headerAuthText;
     this.iconLogout = iconLogout;
     this.savednewsLink = savednewsLink;
+    this.usernameButton = usernameButton;
   }
 
   setEventListeners() {

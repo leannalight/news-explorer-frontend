@@ -6,6 +6,7 @@
 @import url(../menu/__button/menu__button.css);
 @import url(../menu/__button/_hidden/menu__button_hidden.css);
 @import url(../menu/__button-auth/menu__button-auth.css);
+@import url(../menu/__button-auth/_hidden/menu__button-auth_hidden.css);
 @import url(../menu/__icon-logout/menu__icon-logout.css);
 
 .menu {

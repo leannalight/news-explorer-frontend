@@ -1,5 +1,8 @@
 import './index.css';
 
+import { MainApi } from './js/api/MainApi.js';
+import { NewsApi } from './js/api/NewsApi.js';
+
 import { Header } from './js/components/Header.js';
 import { Popup } from './js/components/Popup.js';
 import { Form } from './js/components/Form.js';
@@ -12,10 +15,13 @@ console.log(Form);
 console.log(NewsCard);
 console.log(NewsCardList);
 
-// Переменные, импортируем из констант
+// Импортируем конфиги серверов
+import { MAINAPI_URL, NEWSAPI_URL } from './js/constants/config.js';
+
+// Импортируем переменные из констант
 const {
-  header, mobMenu, mobMenuButton, iconLogout, savednewsLink, authButton, signupPopup,
-  loginPopup, successPopup, popupSignupClose, popupLoginClose, popupSuccessClose,
+  header, mobMenu, mobMenuButton, iconLogout, savednewsLink, authButton, usernameButton,
+  signupPopup, loginPopup, successPopup, popupSignupClose, popupLoginClose, popupSuccessClose,
   signupButton, popupConnect, popupSuccessConnect
 } = require('./js/constants/constants.js');
 
@@ -23,10 +29,15 @@ const {
 const popup = new Popup();
 const form = new Form();
 
+// API
+const mainApi = new MainApi({ MAINAPI_URL });
+const newsApi = new NewsApi({ NEWSAPI_URL });
+
 const headerObject = new Header({
   header,
   color: 'black',
   authButton,
+  usernameButton,
   mobMenu,
   mobMenuButton,
   signupPopup,
@@ -34,6 +45,7 @@ const headerObject = new Header({
   savednewsLink,
 });
 headerObject.setEventListeners();
+
 // вешаем обработчики событий
 signupPopup.addEventListener('submit', (event) => {
   successPopup.classList.remove('popup_hidden');
@@ -82,3 +94,5 @@ authButton.addEventListener('click', () => {
   signupPopup.classList.add('popup_shown');
   signupPopup.classList.remove('popup_hidden');
 })
+
+export { mainApi, newsApi }

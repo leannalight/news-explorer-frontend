@@ -3,9 +3,11 @@ const header = document.querySelector('.header');
 const mobMenu = document.querySelector('.menu');
 const mobMenuButton = document.querySelector('.header__menu-mob-icon');
 const iconLogout = document.querySelector('.menu__icon-logout');
-const savednewsLink = document.querySelector('.savednews');
+const savednewsLink = document.querySelector('#savednews-link');
 // кнопка "Авторизоваться"
 const authButton = document.querySelector('.menu__button-auth');
+// кнопка юзера "Логаут"
+const usernameButton = document.querySelector('#username-button');
 
 // попап регистрации
 const signupPopup = document.querySelector('.popup__signup');
@@ -33,6 +35,7 @@ module.exports = {
   iconLogout,
   savednewsLink,
   authButton,
+  usernameButton,
   signupPopup,
   loginPopup,
   successPopup,
