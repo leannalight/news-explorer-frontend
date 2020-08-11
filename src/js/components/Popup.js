@@ -1,21 +1,42 @@
 export class Popup {
-  constructor(elem) {
-    this.elem = elem;
-    this.close = this.close.bind(this);
-    this.open = this.open.bind(this);
-    this.form = document.querySelector('.popup__form');
- //   this.setContent = this.setContent.bind(this);
- //   this.clearContent = this.clearContent.bind(this);
+  constructor (popupContainer) {
+    this.popupContainer = popupContainer;
 }
- // setContent() {} // вставляет в попап содержимое,
-                // например, форму входа или сообщение об успешной регистрации;
- // clearContent() {} // очищает содержимое попапа
+
   open() {
-    this.form.reset();
-    this.elem.classList.add('popup_shown');
+    this.popupContainer.classList.add('popup_shown');
+    this._addListenerClose(this.popupContainer);
   }
 
-  close() {
-    this.elem.classList.remove('popup_shown');
+  close(event) {
+    if (event.target.classList.contains('popup__close')) {
+      this._closePopup(event);
+    }
+    if (event.target.classList.contains('popup')) {
+      this._closePopup(event);
+    }
+    if (event.target.classList.contains('popup__connect_go')) {
+      this._closePopup(event);
+    }
   }
+
+  _closePopup(event) {
+    const popup1 = event.target.closest('.popup');
+    this._removeListenerClose(popup1);
+    popup1.classList.remove('popup_shown');
+  }
+
+  _addListenerClose(popup) {
+    popup.addEventListener('click', this.close);
+  }
+
+  _removeListenerClose(popup) {
+    popup.removeEventListener('click', this.close);
+  }
+
+  removePopup() {
+    this._removeListenerClose(this.popupContainer);
+    this.popupContainer.classList.remove('popup_shown');
+  }
+
 }

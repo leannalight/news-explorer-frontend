@@ -1,8 +1,7 @@
 export class MainApi {
   constructor(options) {
-    const { url, token } = options;
+    const { url } = options;
     this._url = url;
-    this._token = token;
   }
   // регистрирует нового пользователя
   signup({ email, password, name }) {
@@ -11,10 +10,11 @@ export class MainApi {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify({
-        name,
-        email,
-        password,
+        name: name,
+        email: email,
+        password: password
       }),
     })
     .then((res) => {
@@ -37,8 +37,8 @@ export class MainApi {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email,
-        password,
+        email: email,
+        password: password
       })
     })
     .then((res) => {
@@ -58,8 +58,9 @@ export class MainApi {
 
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
+      credentials: 'include',
       headers: {
-        authorization: this._token,
+        'Content-Type': 'application/json',
       },
     })
     .then((res) => {
@@ -78,8 +79,9 @@ export class MainApi {
 
     return fetch(`${this._url}/articles`, {
       method: 'GET',
+      credentials: 'include',
       headers: {
-        authorization: this._token,
+        'Content-Type': 'application/json',
       },
     })
     .then((res) => {
@@ -108,9 +110,9 @@ export class MainApi {
 
     return fetch(`${this._url}/articles`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        authorization: this._token,
       },
       body: JSON.stringify({
         keyword,
@@ -138,10 +140,10 @@ export class MainApi {
 
     return fetch(`${this._url}/articles/${articleId}`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: {
-        authorization: this._token,
         'Content-Type': 'application/json'
-      }
+      },
     })
     .then((res) => {
       if (res.ok) {
@@ -153,5 +155,25 @@ export class MainApi {
     .catch((err) => {
       throw err;
     });
+  }
+
+  logout() {
+    return fetch(`${this._url}/logout`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+    })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        return Promise.reject(`Произошла ошибка: ${res.status}`);
+      }
+    })
+    .catch((err) => {
+      throw err;
+    })
   }
 }

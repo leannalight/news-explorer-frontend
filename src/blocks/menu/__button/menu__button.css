@@ -1,5 +1,5 @@
 .menu__button {
-  width: 112px;
+  /*width: 112px;*/
   height: 48px;
   border: 1px solid #FFFFFF;
   background: none;
@@ -21,3 +21,4 @@
   color: #B6BCBF;
   border: 1px solid #B6BCBF;
 }
+

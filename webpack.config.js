@@ -66,12 +66,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
+      minify: false,
       template: './src/index.html',
       filename: './index.html',
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       inject: true,
+      minify: false,
       template: './src/savednews/savednews.html',
       filename: './savednews.html',
       chunks: ['savednews'],

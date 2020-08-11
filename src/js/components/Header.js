@@ -1,71 +1,66 @@
 export class Header {
-  constructor(options) {
-    // color - цвет шапки
-    const {
-      color,
-      header,
-      authButton,
-      usernameButton,
-      mobMenuButton,
-      mobMenu,
-      headerAuthText,
-      iconLogout,
-      signupPopup,
-      savednewsLink,
-    } = options;
+  constructor(arrayMenuHeaderHide, menuAuthItem, mainApi) {
 
-    this.header = header;
-    this.color = color;
-    this.authButton = authButton;
-    this.mobMenuButton = mobMenuButton;
-    this.mobMenu = mobMenu;
-    this.signupPopup = signupPopup;
-    this.headerAuthText = headerAuthText;
-    this.iconLogout = iconLogout;
-    this.savednewsLink = savednewsLink;
-    this.usernameButton = usernameButton;
+    this.arrayMenuHeaderHide = arrayMenuHeaderHide;
+    this.menuAuthItem = menuAuthItem;
+    this.mainApi = mainApi;
+  /*  this.mobMenuButton = mobMenuButton; */
   }
 
-  setEventListeners() {
-    this.mobMenuButton.addEventListener('click', () => {
-      this.mobMenu.classList.toggle('.menu_shown');
-      this.mobMenuButton.classList.toggle('header__menu-mob-icon_active');
-      this.header.classList.toggle('header_black');
-    });
-    this.authButton.addEventListener('click', () => {
-      if (this.headerAuthText.textContent === 'Авторизоваться') {
-        this.login();
-      } else {
-        this.iconLogout();
+  render() {
+    this.mainApi.getUserData().then((data) => {
+      if (data === undefined) {
+        return;
       }
-    });
+      const userName = data.name;
+      this.menuAuthItem.classList.add('menu__item_logoff');
+      const menuButtonLength = this.arrayMenusHeaderHide.length - 1;
+      this.arrayMenusHeaderHide.forEach((element, index) => {
+        element.classList.remove('menu__item_logoff');
+        if (index === menuButtonLength) {
+          element.querySelector('.menu__button').textContent = userName;
+          this._addListenerLogout(element);
+        }
+      })
+    })
+    .catch((e) => {
+      console.log(e);
+    })
   }
 
-  logout() {
-    this.headerAuthText.textContent = 'Авторизоваться';
-    this.iconLogout.classList.remove('menu__icon-logout_shown');
-    this.savednewsLink.classList.add('menu__link_hidden');
-    this.mobMenu.classList.remove('menu_auth');
+  renderSecondPage() {
+    this.mainApi.getUserData().then((data) => {
+      if (data === undefined) {
+        return location = './';
+      }
+      this._addListenerLogout(this.menuAuthItem);
+      this.menuAuthItem.textContent = data.name;
+    })
+    .catch((e) => {
+      console.log(e);
+      return location = './'
+    })
   }
 
-  login() {
-    this.signupPopup.classList.remove('popup_hidden');
-    this.signupPopup.classList.add('popup_shown');
+  _addListenerLogout (element) {
+    element.addEventListener('click', this._removeListenerLogout)
   }
-// метод render перерисовывает шапку в зависимости от
-// переданного аргумента - объекта props
-// isLoggedIn - залогинен ли пользователь
-// userName -имя, отобр. в шапке залогиненного пользователя.
-  render(props) {
-    const { isLoggedIn, userName } = props;
-    if (isLoggedIn) {
-      this.iconLogout.classList.add('menu__icon-logout_shown');
-      this.headerAuthText.innerText = userName;
-      this.savednewsLink.classList.remove('menu__link_hidden');
-      this.mobMenu.classList.add('menu_auth');
-    } else {
-      this.logout();
+
+  _removeListenerLogout (event) {
+    if (event.target.classList.contains('menu__button')) {
+      event.preventDefault();
+      const itemButton = event.currentTarget;
+      this.mainApi.logout().then(() => {
+        itemButton.removeEventListener('click', this._addListenerLogout);
+        location.reload();
+      })
+        .catch((e) => {
+          console.log(e);
+        })
     }
   }
 }
+// метод render перерисовывает шапку в зависимости от
+// переданного аргумента - объекта props
+// userName -имя, отобр. в шапке залогиненного пользователя.
 
