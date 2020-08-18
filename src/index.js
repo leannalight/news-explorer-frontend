@@ -1,4 +1,6 @@
 import './index.css';
+import { errorMessage } from './js/constants/messages.js';
+import { options } from './js/constants/config.js';
 
 /* Импортируем переменные из констант */
 const {
@@ -19,33 +21,67 @@ const {
   signupLink,
   loginLink,
   popupLoginForm,
-  popupSignup,
+  popupUserSignup,
   signupButton,
   popupSignupForm,
-  popupSuccess,
+  popupSuccessRegister,
   popupSuccessLink
 } = require('./js/constants/constants.js');
 
-/** Классы */ /*
-import { MainApi } from './js/api/MainApi.js';
-import { NewsApi } from './js/api/NewsApi.js';
-import { Header } from './js/components/Header.js'; */
+/** Классы */
+import { MainApi } from './js/api/MainApi.js'; /*
+import { NewsApi } from './js/api/NewsApi.js'; */
+import { Header } from './js/components/Header.js';
 import { PopupLogin } from './js/components/PopupLogin.js';
-import { Form } from './js/components/Form.js';
+import { PopupSignup } from './js/components/PopupSignup.js';
+import { PopupSuccess } from './js/components/PopupSuccess.js';
+import { FormValidator } from './js/components/FormValidator.js';
+
+/*
 import { NewsCard } from './js/components/NewsCard.js';
-import { NewsCardList } from './js/components/NewsCardList.js';
+import { NewsCardList } from './js/components/NewsCardList.js'; */
 
 /** Подключаем классы */ /*
-const newsApi = new NewsApi(options);
+const newsApi = new NewsApi(options); */
 const mainApi = new MainApi(options);
 
-const header = new Header(arrayMenusHeaderHide, menuAuthItem, mainApi, loadingNews, notFoundNews); */
+const header = new Header(arrayMenusHeaderHide, menuAuthItem, mainApi, loadingNews, notFoundNews);
 
-const popupLogin = new PopupLogin(popupUserLogin, /*mainApi, header,*/ signupLink, popupSignup);
+const popupSuccess = new PopupSuccess(popupSuccessRegister);
+const popupSignup = new PopupSignup(popupUserSignup, mainApi, popupSuccess.open);
+const popupLogin = new PopupLogin(popupUserLogin, mainApi, header, signupLink, popupUserSignup);
 
-// Импортируем конфиги серверов
+const loginValidator = new FormValidator(popupLoginForm, loginButton, errorMessage);
+const signupValidator = new FormValidator(popupSignupForm, signupButton, errorMessage);
+
 
 // вешаем обработчики событий
 authButton.addEventListener('click', popupLogin.open.bind(popupLogin));
 loginButton.addEventListener('click', popupLogin._login);
-// header.render();
+signupButton.addEventListener('click', popupSignup._register);
+
+loginValidator.setEventListeners();
+signupValidator.setEventListeners();
+
+window.addEventListener('keydown', function closeFormByKeydown(event) {
+  if (event.keyCode === 27) {
+    popupLogin.removePopup();
+    popupSignup.removePopup();
+    popupSuccess.removePopup();
+  }
+})
+signupLink.addEventListener('click', (event) => {
+  popupLogin.close(event);
+  popupSignup.open();
+})
+loginLink.addEventListener('click', (event) => {
+  popupSignup.close(event);
+  popupLogin.open();
+})
+popupSuccessLink.addEventListener('click', (event) => {
+  popupSuccess.close(event);
+  popupLogin.open();
+})
+
+
+header.render();

@@ -10,6 +10,7 @@
 @import url(../popup/__text/popup__text.css);
 @import url(../popup/__connect/popup__connect.css);
 @import url(../popup/__button/popup__button.css);
+@import url(../popup/__button/_disabled/popup__button_disabled.css);
 @import url(../popup/_hidden/popup_hidden.css);
 @import url(../popup/_shown/popup_shown.css);
 

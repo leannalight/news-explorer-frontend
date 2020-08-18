@@ -4,7 +4,14 @@ const headerLogo = document.querySelector('.header__logo'); // лого Хэде
 const arrayMenusHeaderHide = document.querySelector('.menu__item_logoff'); // скрытый элемент хэдера, незалогиненный
 const menuAuthItem = document.querySelector('.menu__item_auth'); // меню кнопка хэдера
 
-/** Mobile */
+/** Mobile menu */
+const mobileButton = document.quesrySelector('.');
+const nav = document.quesrySelector('.');
+const navSection = document.quesrySelector('.');
+const navigation = document.quesrySelector('.');
+const arrayNavigationLi = document.quesrySelector('.');
+const overflow = document.quesrySelector('.');
+const bodyOverflowHide = document.quesrySelector('.');
 
 /** Search form */
 const searchForm = document.querySelector('.search__form');
@@ -29,15 +36,15 @@ const loginButton = document.querySelector('#submitLogin'); // кнопка "В�
 
 const signupLink = document.querySelector('#linkToSignup'); // переход на "Регистрацию"
 const loginLink = document.querySelector('#linkToLogin'); // переход на форму "Входа"
-const popupLoginForm = document.querySelector('#login'); // форма Логин
+const popupLoginForm = document.querySelector('#logIn'); // форма Логин
 
 /** Popup Signup */
-const popupSignup = document.querySelector('.popup__signup'); // попап Регистрации
+const popupUserSignup = document.querySelector('.popup__signup'); // попап Регистрации
 const signupButton = document.querySelector('#submitSignup'); // кнопка "Зарегистрироваться в попапе Регистрации"
-const popupSignupForm = document.querySelector('.results__button'); // форма Регистрации
+const popupSignupForm = document.querySelector('#signUp'); // форма Регистрации
 
 /** Popup Success */
-const popupSuccess = document.querySelector('.popup__success');
+const popupSuccessRegister = document.querySelector('.popup__success');
 const popupSuccessLink = document.querySelector('#successLinkToLogin');
 
 /** Analytics */
@@ -60,9 +67,9 @@ module.exports = {
   signupLink,
   loginLink,
   popupLoginForm,
-  popupSignup,
+  popupUserSignup,
   signupButton,
   popupSignupForm,
-  popupSuccess,
+  popupSuccessRegister,
   popupSuccessLink
 };

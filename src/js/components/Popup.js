@@ -1,6 +1,8 @@
 export class Popup {
   constructor (popupContainer) {
     this.popupContainer = popupContainer;
+
+    this.listener();
 }
 
   open() {
@@ -20,7 +22,7 @@ export class Popup {
     }
   }
 
-  _closePopup(event) {
+  _closePopup (event) {
     const popup1 = event.target.closest('.popup');
     this._removeListenerClose(popup1);
     popup1.classList.remove('popup_shown');
@@ -37,6 +39,10 @@ export class Popup {
   removePopup() {
     this._removeListenerClose(this.popupContainer);
     this.popupContainer.classList.remove('popup_shown');
+  }
+
+  listener() {
+    this.popupContainer.querySelector('.popup__close').addEventListener('click', this.close.bind(this));
   }
 
 }

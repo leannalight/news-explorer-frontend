@@ -1,7 +1,7 @@
 export class Header {
-  constructor(arrayMenuHeaderHide, menuAuthItem, mainApi) {
+  constructor(arrayMenusHeaderHide, menuAuthItem, mainApi) {
 
-    this.arrayMenuHeaderHide = arrayMenuHeaderHide;
+    this.arrayMenusHeaderHide = arrayMenusHeaderHide;
     this.menuAuthItem = menuAuthItem;
     this.mainApi = mainApi;
   /*  this.mobMenuButton = mobMenuButton; */

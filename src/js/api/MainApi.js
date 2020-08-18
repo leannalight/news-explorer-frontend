@@ -1,18 +1,17 @@
 export class MainApi {
   constructor(options) {
-    const { url } = options;
-    this._url = url;
+    this.options = options;
   }
   // регистрирует нового пользователя
-  signup({ email, password, name }) {
-    return fetch(`${this._url}/signup`, {
+  signup(email, password, userName) {
+    return fetch(`${this.options.URL}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       credentials: 'include',
       body: JSON.stringify({
-        name: name,
+        name: userName,
         email: email,
         password: password
       }),
@@ -29,8 +28,8 @@ export class MainApi {
     });
   }
  // аутентифицирует пользователя на основе почты и пароля
-  signin({ email, password }) {
-    return fetch(`${this._url}/signin`, {
+  signin(email, password) {
+    return fetch(`${this.options.URL}/signin`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -56,7 +55,7 @@ export class MainApi {
   // возвращает информацию о пользователе
   getUserData() {
 
-    return fetch(`${this._url}/users/me`, {
+    return fetch(`${this.options.URL}/users/me`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -77,7 +76,7 @@ export class MainApi {
   // забирает все статьи
   getArticles() {
 
-    return fetch(`${this._url}/articles`, {
+    return fetch(`${this.options.URL}/articles`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -108,7 +107,7 @@ export class MainApi {
       image,
     } = article;
 
-    return fetch(`${this._url}/articles`, {
+    return fetch(`${this.options.URL}/articles`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -138,7 +137,7 @@ export class MainApi {
   // удаляет статью
   removeArticle(articleId) {
 
-    return fetch(`${this._url}/articles/${articleId}`, {
+    return fetch(`${this.options.URL}/articles/${articleId}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: {
@@ -158,7 +157,7 @@ export class MainApi {
   }
 
   logout() {
-    return fetch(`${this._url}/logout`, {
+    return fetch(`${this.options.URL}/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

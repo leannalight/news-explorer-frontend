@@ -1,9 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
+
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
@@ -23,7 +25,7 @@ module.exports = {
             exclude: /node_modules/,
             use: {
               // загрузчик loader — функция, которая трансформирует исходный код
-                loader: "babel-loader"
+                loader: 'babel-loader'
             }
         },
         {
@@ -83,4 +85,12 @@ module.exports = {
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ],
+  /* other options */
+  target: 'node', // in order to ignore built-in modules like path, fs, etc.
+  node: {
+    fs: 'empty',
+    net: 'empty'
+  },
+  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
+
 };
