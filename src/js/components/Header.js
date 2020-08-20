@@ -4,7 +4,6 @@ export class Header {
     this.arrayMenusHeaderHide = arrayMenusHeaderHide;
     this.menuAuthItem = menuAuthItem;
     this.mainApi = mainApi;
-  /*  this.mobMenuButton = mobMenuButton; */
   }
 
   render() {

@@ -5,13 +5,13 @@ const arrayMenusHeaderHide = document.querySelector('.menu__item_logoff'); // с
 const menuAuthItem = document.querySelector('.menu__item_auth'); // меню кнопка хэдера
 
 /** Mobile menu */
-const mobileButton = document.quesrySelector('.');
-const nav = document.quesrySelector('.');
-const navSection = document.quesrySelector('.');
-const navigation = document.quesrySelector('.');
-const arrayNavigationLi = document.quesrySelector('.');
-const overflow = document.quesrySelector('.');
-const bodyOverflowHide = document.quesrySelector('.');
+const mobMenuButton = document.querySelector('.header__menu-mob-icon'); // кнопка мобильного меню
+const nav = document.querySelector('.header__section');
+const menuSection = document.querySelector('.header__nav');
+const menu = document.querySelector('.menu');
+const arrayMenuItem = document.querySelector('.menu__item');
+const overflow = document.querySelector('.overflow'); // класс для запрета прокрутки
+const bodyOverflow = document.querySelector('.body-theme');
 
 /** Search form */
 const searchForm = document.querySelector('.search__form');
@@ -54,6 +54,13 @@ module.exports = {
   headerLogo,
   arrayMenusHeaderHide,
   menuAuthItem,
+  mobMenuButton,
+  nav,
+  menuSection,
+  menu,
+  arrayMenuItem,
+  overflow,
+  bodyOverflow,
   searchForm,
   searchButton,
   caseCards,

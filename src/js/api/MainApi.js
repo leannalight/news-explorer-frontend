@@ -10,6 +10,7 @@ export class MainApi {
         'Content-Type': 'application/json',
       },
       credentials: 'include',
+      withCredentials: true,
       body: JSON.stringify({
         name: userName,
         email: email,
@@ -32,6 +33,7 @@ export class MainApi {
     return fetch(`${this.options.URL}/signin`, {
       method: 'POST',
       credentials: 'include',
+      withCredentials: true,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -58,6 +60,7 @@ export class MainApi {
     return fetch(`${this.options.URL}/users/me`, {
       method: 'GET',
       credentials: 'include',
+      withCredentials: true,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -79,6 +82,7 @@ export class MainApi {
     return fetch(`${this.options.URL}/articles`, {
       method: 'GET',
       credentials: 'include',
+      withCredentials: true,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -110,6 +114,7 @@ export class MainApi {
     return fetch(`${this.options.URL}/articles`, {
       method: 'POST',
       credentials: 'include',
+      withCredentials: true,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -140,6 +145,7 @@ export class MainApi {
     return fetch(`${this.options.URL}/articles/${articleId}`, {
       method: 'DELETE',
       credentials: 'include',
+      withCredentials: true,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -163,6 +169,7 @@ export class MainApi {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
+      withCredentials: true
     })
     .then((res) => {
       if (res.ok) {

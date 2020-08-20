@@ -8,6 +8,13 @@ const {
   headerLogo,
   arrayMenusHeaderHide,
   menuAuthItem,
+  mobMenuButton,
+  nav,
+  menuSection,
+  menu,
+  arrayMenuItem,
+  overflow,
+  bodyOverflow,
   searchForm,
   searchButton,
   caseCards,
@@ -32,6 +39,7 @@ const {
 import { MainApi } from './js/api/MainApi.js'; /*
 import { NewsApi } from './js/api/NewsApi.js'; */
 import { Header } from './js/components/Header.js';
+import { MobileMenu } from './js/components/MobileMenu.js';
 import { PopupLogin } from './js/components/PopupLogin.js';
 import { PopupSignup } from './js/components/PopupSignup.js';
 import { PopupSuccess } from './js/components/PopupSuccess.js';
@@ -50,6 +58,9 @@ const header = new Header(arrayMenusHeaderHide, menuAuthItem, mainApi, loadingNe
 const popupSuccess = new PopupSuccess(popupSuccessRegister);
 const popupSignup = new PopupSignup(popupUserSignup, mainApi, popupSuccess.open);
 const popupLogin = new PopupLogin(popupUserLogin, mainApi, header, signupLink, popupUserSignup);
+
+/** Мобильное меню */
+const mobileMenu = new MobileMenu(mobMenuButton, nav, menuSection, menu, arrayMenuItem, overflow, bodyOverflow, headerLogo);
 
 const loginValidator = new FormValidator(popupLoginForm, loginButton, errorMessage);
 const signupValidator = new FormValidator(popupSignupForm, signupButton, errorMessage);
@@ -83,5 +94,5 @@ popupSuccessLink.addEventListener('click', (event) => {
   popupLogin.open();
 })
 
-
+mobileMenu.addListenersMobMenu();
 header.render();
