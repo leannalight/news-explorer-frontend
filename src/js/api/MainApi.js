@@ -55,7 +55,7 @@ export class MainApi {
   }
 
   // возвращает информацию о пользователе
-  getUserData() {
+  getUserById() {
 
     return fetch(`${this.options.URL}/users/me`, {
       method: 'GET',
@@ -100,7 +100,7 @@ export class MainApi {
   }
 
   // создаёт статью
-  createArticle(article) {
+  createArticle(cardObject) {
     const {
       keyword,
       title,
@@ -109,7 +109,7 @@ export class MainApi {
       source,
       link,
       image,
-    } = article;
+    } = cardObject;
 
     return fetch(`${this.options.URL}/articles`, {
       method: 'POST',
@@ -161,9 +161,9 @@ export class MainApi {
       throw err;
     });
   }
-
-  logout() {
-    return fetch(`${this.options.URL}/logout`, {
+// отвечает за выход из аккаунта
+  signout() {
+    return fetch(`${this.options.URL}/signout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

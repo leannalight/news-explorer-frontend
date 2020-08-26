@@ -19,5 +19,7 @@ ul {
 button {
   cursor: pointer;
   outline: none;
+  box-sizing: border-box;
+  border-radius: 100px;
 }
 

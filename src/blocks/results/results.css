@@ -7,6 +7,8 @@
 @import url(../results/__not-logo/results__not-logo.css);
 @import url(../results/__not-title/results__not-title.css);
 @import url(../results/__not-text/results__not-text.css);
+@import url(../results/_hidden/results_hidden.css);
+@import url(../results/__button/_disabled/results__button_disabled.css);
 
 .results {
   padding: 80px 7%;

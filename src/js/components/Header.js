@@ -7,7 +7,7 @@ export class Header {
   }
 
   render() {
-    this.mainApi.getUserData().then((data) => {
+    this.mainApi.getUserById().then((data) => {
       if (data === undefined) {
         return;
       }
@@ -22,44 +22,43 @@ export class Header {
         }
       })
     })
-    .catch((e) => {
-      console.log(e);
+    .catch((err) => {
+      console.log(err);
     })
   }
 
   renderSecondPage() {
-    this.mainApi.getUserData().then((data) => {
+    this.mainApi.getUserById().then((data) => {
       if (data === undefined) {
         return location = './';
       }
       this._addListenerLogout(this.menuAuthItem);
       this.menuAuthItem.textContent = data.name;
     })
-    .catch((e) => {
-      console.log(e);
+    .catch((err) => {
+      console.log(err);
       return location = './'
     })
   }
 
-  _addListenerLogout (element) {
+  _addListenerLogout = (element) => {
     element.addEventListener('click', this._removeListenerLogout)
   }
 
-  _removeListenerLogout (event) {
+  _removeListenerLogout = (event) => {
     if (event.target.classList.contains('menu__button')) {
       event.preventDefault();
       const itemButton = event.currentTarget;
-      this.mainApi.logout().then(() => {
+      this.mainApi.signout().then(() => {
         itemButton.removeEventListener('click', this._addListenerLogout);
         location.reload();
       })
-        .catch((e) => {
-          console.log(e);
+        .catch((err) => {
+          console.log(err);
         })
     }
   }
 }
-// метод render перерисовывает шапку в зависимости от
-// переданного аргумента - объекта props
+// метод render перерисовывает шапку в зависимости от переданного аргумента - объекта props
 // userName -имя, отобр. в шапке залогиненного пользователя.
 

@@ -1,7 +1,7 @@
 /** шапка сайта Header */
 const headerTheme = document.querySelector('.header');
 const headerLogo = document.querySelector('.header__logo'); // лого Хэдера
-const arrayMenusHeaderHide = document.querySelector('.menu__item_logoff'); // скрытый элемент хэдера, незалогиненный
+const arrayMenusHeaderHide = document.querySelectorAll('.menu__item_logoff'); // скрытый элемент хэдера, незалогиненный
 const menuAuthItem = document.querySelector('.menu__item_auth'); // меню кнопка хэдера
 
 /** Mobile menu */
@@ -9,7 +9,7 @@ const mobMenuButton = document.querySelector('.header__menu-mob-icon'); // кн�
 const nav = document.querySelector('.header__section');
 const menuSection = document.querySelector('.header__nav');
 const menu = document.querySelector('.menu');
-const arrayMenuItem = document.querySelector('.menu__item');
+const arrayMenuItem = document.querySelectorAll('.menu__item');
 const overflow = document.querySelector('.overflow'); // класс для запрета прокрутки
 const bodyOverflow = document.querySelector('.body-theme');
 

@@ -20,5 +20,11 @@
 .menu__button:hover {
   color: #B6BCBF;
   border: 1px solid #B6BCBF;
+  opacity: .7;
 }
 
+.menu__button::after {
+  content: url('../../../images/logout_white.svg');
+  margin-left: 5px;
+  top: 2px;
+}

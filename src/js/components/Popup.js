@@ -5,12 +5,12 @@ export class Popup {
     this.listener();
 }
 
-  open() {
+  open = () => {
     this.popupContainer.classList.add('popup_shown');
     this._addListenerClose(this.popupContainer);
   }
 
-  close(event) {
+  close = (event) => {
     if (event.target.classList.contains('popup__close')) {
       this._closePopup(event);
     }
@@ -22,21 +22,21 @@ export class Popup {
     }
   }
 
-  _closePopup (event) {
+  _closePopup = (event) => {
     const popup1 = event.target.closest('.popup');
     this._removeListenerClose(popup1);
     popup1.classList.remove('popup_shown');
   }
 
-  _addListenerClose(popup) {
+  _addListenerClose = (popup) => {
     popup.addEventListener('click', this.close);
   }
 
-  _removeListenerClose(popup) {
+  _removeListenerClose = (popup) => {
     popup.removeEventListener('click', this.close);
   }
 
-  removePopup() {
+  removePopup = () => {
     this._removeListenerClose(this.popupContainer);
     this.popupContainer.classList.remove('popup_shown');
   }

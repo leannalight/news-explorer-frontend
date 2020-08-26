@@ -1,19 +1,15 @@
-export class NewsApi {
-  // не доделан, ещё в процессе...
-  constructor(options) {
-    const {
-      url, apiKey, pageSize, amountDays
-    } = options;
+import { getDate } from '../utils/get-date.js';
+import { pageSize, newsLang } from '../constants/config.js';
 
-    this._url = url;
-    this._apiKey = apiKey;
-    this._pageSize = pageSize;
-    this._amountDays = amountDays;
+export class NewsApi {
+  constructor(options) {
+    this.options = options;
   }
   // возвращает список новостей на основе запроса
   getNews(keyword) {
+    const date = getDate();
     return fetch(
-      `${this._url}?q=${keyword}&pageSize=${this._pageSize}&apiKey=${this._apiKey}`
+      `${this.options.baseUrl}${keyword}&from=${date.fromDate}&to=${date.toDate}&language=${newsLang}&sortBy=publishedAt&pageSize=${pageSize}&apiKey=${this.options.headers.authorizationNews}`
     )
     .then((res) => {
       if (res.ok) {

@@ -1,4 +1,5 @@
 @import url(../card/__image/card__image.css);
+@import url(../card/__photo/card__photo.css);
 @import url(../card/__name/card__name.css);
 @import url(../card/__name/_shown/card__name_shown.css);
 @import url(../card/__name/_hidden/card__name_hidden.css);

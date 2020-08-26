@@ -40,7 +40,7 @@ export class FormValidator {
     this.form.addEventListener('input', this.setSubmitButtonState.bind(this));
 
   }
-/*
+
   _buttonEnabled() {
     this.button.removeAttribute('disabled');
     this.button.classList.remove('popup__button_disabled');
@@ -52,7 +52,7 @@ export class FormValidator {
     this.button.classList.add('popup__button_disabled');
     this.button.classList.remove('popup__button_enabled');
   }
-*/
+
   clearErrors() {
     const errorText = Array.from(document.querySelectorAll('.popup__error-message'));
     errorText.forEach((element) => {

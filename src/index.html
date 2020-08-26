@@ -19,18 +19,19 @@
           <img class="header__menu-mob-icon" id="hamburger" src="<%=require('./images/menu_mob_white.svg').default %>" alt="menu mobile icon">
           <nav class="header__nav">
             <ul class="menu menu_hidden">
+              <!-- menu__item_logoff скрывает кнопку, когда пользователь не залогинен -->
               <li class="menu__item">
                 <a href="index.html" class="link menu__link
                   menu__link_colour_white
                   menu__link_active" target="_blank">Главная</a>
               </li>
               <li class="menu__item menu__item_logoff">
-                <a href="savednews.html" id="savednews-link" class="link savednews menu__link
+                <a href="savednews.html" id="savednewsLink" class="menu__link
                   menu__link_colour_white" target="_blank">Сохранённые статьи</a>
               </li>
               <li class="menu__item menu__item_logoff">
-                <button id="username-button" class="button menu__button">Грета
-                  <img class="menu__icon-logout" src="<%=require('./images/logout_white.svg').default %>" alt="logout">
+                <button id="usernameButton" class="button menu__button">Грета
+               <!--   <img class="menu__icon-logout" src="<%=require('./images/logout_white.svg').default %>" alt="logout"> -->
                 </button>
               </li>
               <li class="menu__item menu__item_auth">
@@ -50,7 +51,7 @@
         </div>
       </header>
       <main>
-        <section class="results">
+        <section class="results results_hidden">
           <div class="results__show-case">
             <h2 class="results__title">Результаты поиска</h2>
             <div class="results__card-case">
@@ -78,11 +79,11 @@
           </div>
 
           <button class="button results__button">Показать еще</button>
-          <div class="results__loading">
+          <div class="results__loading results__loading_hidden">
             <i class="circle-preloader"></i>
             <p class="circle-preloader__text">Идет поиск новостей...</p>
           </div>
-          <div class="results__nothing">
+          <div class="results__nothing results__nothing_hidden">
             <img src="<%=require('./images/not-found_v1.png').default %>" class="results__not-logo" alt="Gloomy face">
             <h2 class="results__not-title">Ничего не найдено</h2>
             <p class="results__not-text">К сожалению по вашему запросу
