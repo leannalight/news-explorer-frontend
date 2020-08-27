@@ -47,7 +47,9 @@ const popupSignupForm = document.querySelector('#signUp'); // форма Рег�
 const popupSuccessRegister = document.querySelector('.popup__success');
 const popupSuccessLink = document.querySelector('#successLinkToLogin');
 
-/** Analytics */
+/** My saved articles analytics */
+const articleTitle = document.querySelector('.articles__title');
+const articleKeywordsArray = document.querySelector('.articles__keyword');
 
 module.exports = {
   headerTheme,
@@ -78,5 +80,7 @@ module.exports = {
   signupButton,
   popupSignupForm,
   popupSuccessRegister,
-  popupSuccessLink
+  popupSuccessLink,
+  articleTitle,
+  articleKeywordsArray
 };

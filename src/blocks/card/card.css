@@ -15,6 +15,7 @@
 @import url(../card/__title/card__title.css);
 @import url(../card/__text/card__text.css);
 @import url(../card/__source/card__source.css);
+@import url(../card/__link/card__link.css);
 
 .card {
   max-width: 400px;
