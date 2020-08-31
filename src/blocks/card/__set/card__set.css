@@ -1,4 +1,7 @@
 .card__set {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: flex-end;
   margin: 0;

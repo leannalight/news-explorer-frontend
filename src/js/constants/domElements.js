@@ -47,7 +47,7 @@ const popupSignupForm = document.querySelector('#signUp'); // форма Рег�
 const popupSuccessRegister = document.querySelector('.popup__success');
 const popupSuccessLink = document.querySelector('#successLinkToLogin');
 
-/** My saved articles analytics */
+/** Saved articles data */
 const articleTitle = document.querySelector('.articles__title');
 const articleKeywordsArray = document.querySelector('.articles__keyword');
 

@@ -3,17 +3,18 @@ const mainApiUrl = NODE_ENV === 'development' ? 'https://api.explorenews.tk' : '
 // адрес API новостей
 const newsApiUrl = NODE_ENV === 'development' ? 'https://newsapi.org/v2/everything?q=' : 'https://nomoreparties.co/news/v2/everything?q=';
 
-const obj = {
+const objConfig = {
   baseUrl: `${newsApiUrl}`,
   headers: {
     authorizationNews: 'fca1dff7933b432f82d0c7164dfc70f8' // const newsApiKey = 'fca1dff7933b432f82d0c7164dfc70f8';
   },
-  URL: `${mainApiUrl}`
-}
+  URL: `${mainApiUrl}`}
 
-const config = JSON.stringify(obj);
+// Метод JSON.stringify(obj) берёт объект и преобразует его в строку
+const config = JSON.stringify(objConfig);
 
-const options = JSON.parse(config); // настройка API
+// Метод JSON.parse() разбирает строку JSON для преобразования обратно в объект
+const options = JSON.parse( config ); // настройка API
 
 const msOnDay = 86400000;
 const pageSize = 100;
@@ -27,7 +28,7 @@ const objCardStatus = {
 
 const nullResult = 0;
 const firstIndexArray = 0;
-const saveArticleWord = {
+const savedArticleWord = {
   firstWord:0,
   secondWord:1,
   thirdWord:2
@@ -35,4 +36,5 @@ const saveArticleWord = {
 
 const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
 
-export { options, msOnDay, pageSize, newsLang, imageUrl, objCardStatus, nullResult, firstIndexArray, saveArticleWord, months };
+export { options, msOnDay, pageSize, newsLang, imageUrl, objCardStatus, nullResult, firstIndexArray, savedArticleWord, months };
+

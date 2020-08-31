@@ -12,7 +12,9 @@ export class FormValidator {
     const errorMessage = {
       validLenght: 'Должно быть от 2 до 30 символов',
       validInput: 'Это обязательное поле',
-      validEmail: 'Неправильный формат email' };
+      validEmail: 'Неправильный формат email',
+      validPassowrd: 'Пароль должен быть от 8 символов'
+    };
 
     let message = "";
 

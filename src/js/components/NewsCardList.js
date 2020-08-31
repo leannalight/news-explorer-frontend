@@ -67,13 +67,16 @@ export class NewsCardList {
       this.renderPosition.removeChild(this.renderPosition.firstChild);
     }
   }
+
   getAllArticles = () => {
     this.mainApi.getArticles().then((data) => {
       this.statusLogin = objCardStatus.statusCardSaved;
+      console.log(data);
       data.forEach((element) => {
+        console.log(element);
         this._addCard(element);
       })
-    }).carch((err) => {
+    }).catch((err) => {
       console.log(err);
     })
   }

@@ -20,9 +20,9 @@ export class MainApi {
     .then((res) => {
       if (res.ok) {
         return res.json();
-      } else {
-        return Promise.reject (`Произошла ошибка: ${res.status}`);
       }
+      const json = res.json();
+      return json.then(Promise.reject.bind(Promise))
     })
     .catch((err) => {
         throw err;
@@ -45,9 +45,9 @@ export class MainApi {
     .then((res) => {
       if (res.ok) {
         return res.json();
-      } else {
-        return Promise.reject(`Произошла ошибка: ${res.status}`);
       }
+      const json = res.json();
+      return json.then(Promise.reject.bind(Promise))
     })
     .catch((err) => {
       throw err;
@@ -62,22 +62,22 @@ export class MainApi {
       credentials: 'include',
       withCredentials: true,
       headers: {
+        authorization: document.cookie,
         'Content-Type': 'application/json',
       },
     })
     .then((res) => {
       if (res.ok) {
         return res.json();
-      } else {
-        return Promise.reject(`Произошла ошибка: ${res.status}`);
       }
+        return Promise.reject(`Произошла ошибка: ${res.status}`);
     })
     .catch((err) => {
       throw err;
     });
   }
   // забирает все статьи
-  getArticles() {
+  getArticles = () => {
 
     return fetch(`${this.options.URL}/articles`, {
       method: 'GET',
@@ -90,9 +90,9 @@ export class MainApi {
     .then((res) => {
       if (res.ok) {
         return res.json();
-      } else {
-        return Promise.reject(`Произошла ошибка: ${res.status}`);
       }
+      const json = res.json();
+      return json.then(Promise.reject.bind(Promise))
     })
     .catch((err) => {
       throw err;
@@ -100,17 +100,7 @@ export class MainApi {
   }
 
   // создаёт статью
-  createArticle(cardObject) {
-    const {
-      keyword,
-      title,
-      text,
-      date,
-      source,
-      link,
-      image,
-    } = cardObject;
-
+  createArticle(article) {
     return fetch(`${this.options.URL}/articles`, {
       method: 'POST',
       credentials: 'include',
@@ -119,28 +109,28 @@ export class MainApi {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        keyword,
-        title,
-        text,
-        date,
-        source,
-        link,
-        image,
+        keyword: article.keyword,
+        title: article.title,
+        text: article.text,
+        date: article.date,
+        source: article.source,
+        link: article.link,
+        image: article.image
       })
     })
       .then((res) => {
         if (res.ok) {
           return res.json();
-        } else {
-          return Promise.reject(`Произошла ошибка: ${res.status}`);
         }
+        const json = res.json();
+        return json.then(Promise.reject.bind(Promise))
       })
       .catch((err) => {
         throw err;
       });
   }
   // удаляет статью
-  removeArticle(articleId) {
+  deleteArticleById(articleId) {
 
     return fetch(`${this.options.URL}/articles/${articleId}`, {
       method: 'DELETE',
@@ -153,9 +143,9 @@ export class MainApi {
     .then((res) => {
       if (res.ok) {
         return res.json();
-      } else {
-        return Promise.reject(`Произошла ошибка: ${res.status}`);
       }
+      const json = res.json();
+      return json.then(Promise.reject.bind(Promise));
     })
     .catch((err) => {
       throw err;
@@ -174,9 +164,9 @@ export class MainApi {
     .then((res) => {
       if (res.ok) {
         return res.json();
-      } else {
-        return Promise.reject(`Произошла ошибка: ${res.status}`);
       }
+      const json = res.json();
+      return json.then(Promise.reject.bind(Promise))
     })
     .catch((err) => {
       throw err;

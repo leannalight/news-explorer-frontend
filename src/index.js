@@ -3,7 +3,6 @@ import { options } from './js/constants/config.js';
 
 /* Импортируем переменные из констант */
 const {
-  headerTheme,
   headerLogo,
   arrayMenusHeaderHide,
   menuAuthItem,
@@ -48,8 +47,8 @@ import { NewsCardList } from './js/components/NewsCardList.js';
 import { Search } from './js/components/Search.js';
 
 /** Подключаем классы */
-const newsApi = new NewsApi(options);
 const mainApi = new MainApi(options);
+const newsApi = new NewsApi(options);
 
 const header = new Header(arrayMenusHeaderHide, menuAuthItem, mainApi, loadingNews, notFoundNews);
 

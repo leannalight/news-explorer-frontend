@@ -16,7 +16,7 @@ export class NewsCard {
         <div class="card__image">
           <img src="${this._sanitizeHTML(image)}" alt="${(this._sanitizeHTML(cardObj.title))}" class="card__photo">
           <div class="card__set">
-            <div class="card__login"><span class="card__login-text">Войдите, чтобы
+            <div class="card__login card__login_disabled"><span class="card__login-text">Войдите, чтобы
               сохранять статьи</span></div>
             <div class="card__state"></div>
           </div>
@@ -82,7 +82,7 @@ export class NewsCard {
         date: card.querySelector('.card__date').textContent,
         source: card.querySelector('.card__source').textContent,
         link: card.querySelector('.card__link').getAttribute('href'),
-        image: card.querySelector('.card__image').getAttribute('src')
+        image: card.querySelector('.card__photo').getAttribute('src')
       }
       this.mainApi.createArticle(cardObj).then((data) => {
         if (data !== undefined) {
@@ -98,7 +98,7 @@ removeCard = (event) => {
   if (event.target.classList.contains('card__state-delete')) {
     if (confirm("Are you sure you want to delete this article?")) {
       const card = event.target.closest('.card');
-      this.mainApi.removeArticle(card.id).then((data) => {
+      this.mainApi.deleteArticleById(card.articleId).then((data) => {
         if (data !== undefined) {
           card.remove();
         }

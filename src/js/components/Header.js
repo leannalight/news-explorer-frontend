@@ -37,7 +37,7 @@ export class Header {
     })
     .catch((err) => {
       console.log(err);
-      return location = './'
+      return location = './';
     })
   }
 
@@ -51,7 +51,7 @@ export class Header {
       const itemButton = event.currentTarget;
       this.mainApi.signout().then(() => {
         itemButton.removeEventListener('click', this._addListenerLogout);
-        location.reload();
+        location.reload(); // перезагрузка страницы
       })
         .catch((err) => {
           console.log(err);
@@ -59,6 +59,6 @@ export class Header {
     }
   }
 }
-// метод render перерисовывает шапку в зависимости от переданного аргумента - объекта props
+// метод render перерисовывает шапку в зависимости от переданного аргумента - объекта
 // userName -имя, отобр. в шапке залогиненного пользователя.
 
