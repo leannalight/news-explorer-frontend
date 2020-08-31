@@ -1,5 +1,5 @@
 // адрес моего API
-const mainApiUrl = NODE_ENV === 'development' ? 'https://api.explorenews.tk' : 'http://localhost:3000';
+const mainApiUrl = NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://api.explorenews.tk';
 // адрес API новостей
 const newsApiUrl = NODE_ENV === 'development' ? 'https://newsapi.org/v2/everything?q=' : 'https://nomoreparties.co/news/v2/everything?q=';
 
