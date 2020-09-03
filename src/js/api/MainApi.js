@@ -21,8 +21,7 @@ export class MainApi {
       if (res.ok) {
         return res.json();
       }
-      const json = res.json();
-      return json.then(Promise.reject.bind(Promise))
+      return Promise.reject(`Что-то пошло не так: ${res.status}`);
     })
     .catch((err) => {
         throw err;
@@ -46,8 +45,7 @@ export class MainApi {
       if (res.ok) {
         return res.json();
       }
-      const json = res.json();
-      return json.then(Promise.reject.bind(Promise))
+      return Promise.reject(`Что-то пошло не так: ${res.status}`);
     })
     .catch((err) => {
       throw err;
@@ -70,7 +68,7 @@ export class MainApi {
       if (res.ok) {
         return res.json();
       }
-        return Promise.reject(`Произошла ошибка: ${res.status}`);
+      return Promise.reject(`Что-то пошло не так: ${res.status}`);
     })
   }
   // забирает все статьи
@@ -88,8 +86,7 @@ export class MainApi {
       if (res.ok) {
         return res.json();
       }
-      const json = res.json();
-      return json.then(Promise.reject.bind(Promise))
+      return Promise.reject(`Что-то пошло не так: ${res.status}`);
     })
     .catch((err) => {
       throw err;
@@ -119,8 +116,7 @@ export class MainApi {
         if (res.ok) {
           return res.json();
         }
-        const json = res.json();
-        return json.then(Promise.reject.bind(Promise))
+        return Promise.reject(`Что-то пошло не так: ${res.status}`);
       })
       .catch((err) => {
         throw err;
@@ -141,8 +137,7 @@ export class MainApi {
       if (res.ok) {
         return res.json();
       }
-      const json = res.json();
-      return json.then(Promise.reject.bind(Promise));
+      return Promise.reject(`Что-то пошло не так: ${res.status}`);
     })
     .catch((err) => {
       throw err;
@@ -162,8 +157,7 @@ export class MainApi {
       if (res.ok) {
         return res.json();
       }
-      const json = res.json();
-      return json.then(Promise.reject.bind(Promise))
+      return Promise.reject(`Что-то пошло не так: ${res.status}`);
     })
     .catch((err) => {
       throw err;

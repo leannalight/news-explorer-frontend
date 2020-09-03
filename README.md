@@ -1,5 +1,5 @@
 # Frontend часть - интерактивная работа приложения NewsExplorer - JavaScript - level-3.
-## v0.0.6
+## v0.0.7
 
 - Ссылка на приложение в gh-pages: [https://leannalight.github.io/news-explorer-frontend/](https://leannalight.github.io/news-explorer-frontend/)
 - Ссылка на бэкенд: [Backend здесь](https://github.com/leannalight/news-explorer-api/)
