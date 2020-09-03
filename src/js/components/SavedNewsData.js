@@ -20,7 +20,7 @@ export class SavedNewsData {
       this.getUserInfo();
       if (data !== undefined) {
       this.countArticle = data.length;
-      data.forEach((element) => {
+      data.data.forEach((element) => {
        this.keywordsArray.push(element.keyword)
       })
       this.getUserInfo();

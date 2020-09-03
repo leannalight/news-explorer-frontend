@@ -42,4 +42,5 @@ header.renderSecondPage();
 newsCardList.getAllArticles();
 newsCardList.addListeners();
 savedNewsData.getSaveKeyword();
+savedNewsData.getUserInfo();
 mobileMenu.addListenersMobMenu();

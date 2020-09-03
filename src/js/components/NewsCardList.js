@@ -2,16 +2,16 @@ import { firstIndexArray, nullResult, objCardStatus } from '../constants/config.
 
 // Класс для хранения и отрисовки карточек
 export class NewsCardList {
-  constructor(newsCard, renderPosition, buttonMore, mainApi) {
+  constructor(newsCard, renderPosition, buttonShowMore, mainApi) {
     this.newsCard = newsCard;
     this.renderPosition = renderPosition;
-    this.buttonMore = buttonMore;
+    this.buttonShowMore = buttonShowMore;
     this.mainApi = mainApi;
     this.items = [];
     this.statusLogin = objCardStatus.statusCardUnLoggedIn;
     this.keyword = '';
   }
-
+  // принимает экземпляр карточки и добавляет её в список
   _addCard = (cardObj) => {
     return this.renderPosition.insertAdjacentHTML('beforeEnd', this.newsCard.getTemplate(cardObj, this.statusLogin, this.keyword));
   }
@@ -42,19 +42,19 @@ export class NewsCardList {
     this.keyword = '';
     this.keyword = word;
   }
-
+  // отвечает за функциональность кнопки «Показать ещё»
   _showMoreArticles = () => {
     let currentIndex = 0;
     let currentLimit = 3;
     if (this.items[firstIndexArray].length !== nullResult) {
-      this.buttonMore.classList.remove('results__button_disabled');
+      this.buttonShowMore.classList.remove('results__button_disabled');
       currentLimit += currentIndex;
       for (currentIndex; currentIndex < currentLimit && currentIndex < this.items[firstIndexArray].length; currentIndex++) {
         this._addCard(this.items[firstIndexArray][currentIndex]);
         this.items[firstIndexArray].shift();
       }
     } else {
-      this.buttonMore.classList.add('results__button_disabled');
+      this.buttonShowMore.classList.add('results__button_disabled');
     }
   }
 
@@ -67,12 +67,12 @@ export class NewsCardList {
       this.renderPosition.removeChild(this.renderPosition.firstChild);
     }
   }
-
+  // забирает все сохранённые статьи
   getAllArticles = () => {
     this.mainApi.getArticles().then((data) => {
       this.statusLogin = objCardStatus.statusCardSaved;
       console.log(data);
-      data.forEach((element) => {
+      data.data.forEach((element) => {
         console.log(element);
         this._addCard(element);
       })
@@ -80,11 +80,6 @@ export class NewsCardList {
       console.log(err);
     })
   }
-  /* renderResults принимает массив экземпляров карточек и отрисовывает их;
-  renderLoader отвечает за отрисовку лоудера;
-  renderError принимает объект ошибки и показывает ошибку в интерфейсе;
-  showMore отвечает за функциональность кнопки «Показать ещё»;
-  addCard принимает экземпляр карточки и добавляет её в список. */
 }
 
 

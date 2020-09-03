@@ -94,22 +94,19 @@ export class NewsCard {
     }
   }
   // Удаление карточки
-removeCard = (event) => {
-  if (event.target.classList.contains('card__state-delete')) {
-    if (confirm("Are you sure you want to delete this article?")) {
-      const card = event.target.closest('.card');
-      this.mainApi.deleteArticleById(card.articleId).then((data) => {
-        if (data !== undefined) {
-          card.remove();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      })
+  removeCard = (event) => {
+    if (event.target.classList.contains('card__state-delete')) {
+      if (confirm("Are you sure you want to delete this article?")) {
+        const card = event.target.closest('.card');
+        this.mainApi.deleteArticleById(card.articleId).then((data) => {
+          if (data !== undefined) {
+            card.remove();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      }
     }
   }
 }
-  /* renderIcon — отвечает за отрисовку иконки карточки. У этой иконки три состояния:
-  иконка незалогиненного пользователя, активная иконка залогиненного, неактивная иконка залогиненного.*/
-
-  }

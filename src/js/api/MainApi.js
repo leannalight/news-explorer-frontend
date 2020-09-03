@@ -3,7 +3,7 @@ export class MainApi {
     this.options = options;
   }
   // регистрирует нового пользователя
-  signup(email, password, userName) {
+  signup = (userName, userEmail, userPassword) => {
     return fetch(`${this.options.URL}/signup`, {
       method: 'POST',
       headers: {
@@ -13,8 +13,8 @@ export class MainApi {
       withCredentials: true,
       body: JSON.stringify({
         name: userName,
-        email: email,
-        password: password
+        email: userEmail,
+        password: userPassword
       }),
     })
     .then((res) => {
@@ -29,7 +29,7 @@ export class MainApi {
     });
   }
  // аутентифицирует пользователя на основе почты и пароля
-  signin(email, password) {
+  signin = (userEmail, userPassword) => {
     return fetch(`${this.options.URL}/signin`, {
       method: 'POST',
       credentials: 'include',
@@ -38,8 +38,8 @@ export class MainApi {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email,
-        password: password
+        email: userEmail,
+        password: userPassword
       })
     })
     .then((res) => {
@@ -72,12 +72,9 @@ export class MainApi {
       }
         return Promise.reject(`Произошла ошибка: ${res.status}`);
     })
-    .catch((err) => {
-      throw err;
-    });
   }
   // забирает все статьи
-  getArticles = () => {
+  getArticles() {
 
     return fetch(`${this.options.URL}/articles`, {
       method: 'GET',
@@ -130,7 +127,7 @@ export class MainApi {
       });
   }
   // удаляет статью
-  deleteArticleById(articleId) {
+  deleteArticleById = (articleId) => {
 
     return fetch(`${this.options.URL}/articles/${articleId}`, {
       method: 'DELETE',
@@ -152,7 +149,7 @@ export class MainApi {
     });
   }
 // отвечает за выход из аккаунта
-  signout() {
+  signout = () => {
     return fetch(`${this.options.URL}/signout`, {
       method: 'POST',
       headers: {

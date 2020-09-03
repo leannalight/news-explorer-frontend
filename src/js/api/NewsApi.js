@@ -14,9 +14,9 @@ export class NewsApi {
     .then((res) => {
       if (res.ok) {
         return res.json();
-      } else {
-        return Promise.reject(`Произошла ошибка: ${res.status}`);
       }
+      const json = res.json();
+      return json.then(Promise.reject.bind(Promise))
     })
     .catch((err) => {
       throw err;
