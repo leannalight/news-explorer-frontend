@@ -65,7 +65,7 @@ module.exports = {
 
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
+      // cssProcessor: require('cssnano'),
       cssProcessorPluginOptions: {
         preset: ['default'],
       },
