@@ -19,7 +19,7 @@ export class SavedNewsData {
     this.mainApi.getArticles().then((data) => {
       this.getUserInfo();
       if (data !== undefined) {
-      this.countArticle = data.length;
+      this.countArticle = data.data.length;
       data.data.forEach((element) => {
        this.keywordsArray.push(element.keyword)
       })
@@ -62,5 +62,4 @@ export class SavedNewsData {
       this.articleKeywordsArray[savedArticleWord.thirdWord].textContent = ` и ${wordsArray.length - savedArticleWord.secondWord} другим`;
     }
   }
-
 }

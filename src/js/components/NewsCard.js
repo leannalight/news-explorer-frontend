@@ -14,58 +14,58 @@ export class NewsCard {
     if (statusLogin === objCardStatus.statusCardUnLoggedIn) {
       return  `<div class="card">
         <div class="card__image">
-          <img src="${this._sanitizeHTML(image)}" alt="${(this._sanitizeHTML(cardObj.title))}" class="card__photo">
+          <img src="${this._cleanHtmlUpdate(image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
-            <div class="card__login card__login_disabled"><span class="card__login-text">Войдите, чтобы
+            <div class="card__login card__login_hidden"><span class="card__login-text">Войдите, чтобы
               сохранять статьи</span></div>
-            <div class="card__state"></div>
+            <div class="card__state" disabled></div>
           </div>
         </div>
-        <a href="${this._sanitizeHTML(cardObj.url)}" target="_blank" class="card__link">
-          <span class="card__date">${this._sanitizeHTML(setNormalDate(cardObj.publishedAt))}</span>
-          <h3 class="card__title">${this._sanitizeHTML(cardObj.title)}</h3>
-          <p class="card__text">${this._sanitizeHTML(cardObj.description)}</p>
-          <span class="card__source">${this._sanitizeHTML(cardObj.source.name)}</span>
+        <a href="${this._cleanHtmlUpdate(cardObj.url)}" target="_blank" class="card__link">
+          <span class="card__date">${this._cleanHtmlUpdate(setNormalDate(cardObj.publishedAt))}</span>
+          <h3 class="card__title">${this._cleanHtmlUpdate(cardObj.title)}</h3>
+          <p class="card__text">${this._cleanHtmlUpdate(cardObj.description)}</p>
+          <span class="card__source">${this._cleanHtmlUpdate(cardObj.source.name)}</span>
         </a>
       </div>`;
     }
     if (statusLogin === objCardStatus.statusCardLoggedIn) {
       return `<div class="card">
         <div class="card__image">
-          <img src="${this._sanitizeHTML(image)}" alt="${(this._sanitizeHTML(cardObj.title))}" class="card__photo">
+          <img src="${this._cleanHtmlUpdate(image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
             <div class="card__state"></div>
           </div>
         </div>
-        <a href="${this._sanitizeHTML(cardObj.url)}" target="_blank" class="card__link">
-          <span class="card__date">${this._sanitizeHTML(setNormalDate(cardObj.publishedAt))}</span>
-          <h3 class="card__title">${this._sanitizeHTML(cardObj.title)}</h3>
-          <p class="card__text">${this._sanitizeHTML(cardObj.description)}</p>
-          <span class="card__source">${this._sanitizeHTML(cardObj.source.name)}</span>
+        <a href="${this._cleanHtmlUpdate(cardObj.url)}" target="_blank" class="card__link">
+          <span class="card__date">${this._cleanHtmlUpdate(setNormalDate(cardObj.publishedAt))}</span>
+          <h3 class="card__title">${this._cleanHtmlUpdate(cardObj.title)}</h3>
+          <p class="card__text">${this._cleanHtmlUpdate(cardObj.description)}</p>
+          <span class="card__source">${this._cleanHtmlUpdate(cardObj.source.name)}</span>
         </a>
       </div>`;
     }
     if (statusLogin === objCardStatus.statusCardSaved) {
       return `<div class="card" id="${cardObj._id}">
         <div class="card__image">
-          <img src="${this._sanitizeHTML(image)}" alt="${(this._sanitizeHTML(cardObj.title))}" class="card__photo">
+          <img src="${this._cleanHtmlUpdate(image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
-            <div class="card__name"><span class="card__name-is">${this._sanitizeHTML(cardObj.keyword)}</span></div>
-            <div class="card__login"><span class="card__login-saved">Убрать из сохранённых</span></div>
+            <div class="card__name"><span class="card__name-is">${this._cleanHtmlUpdate(cardObj.keyword)}</span></div>
+            <div class="card__login card__login_hidden"><span class="card__login-saved">Убрать из сохранённых</span></div>
             <div class="card__state-delete"></div>
           </div>
         </div>
-        <a href="${this._sanitizeHTML(cardObj.url)}" target="_blank" class="card__link">
-          <span class="card__date">${this._sanitizeHTML(setNormalDate(cardObj.publishedAt))}</span>
-          <h3 class="card__title">${this._sanitizeHTML(cardObj.title)}</h3>
-          <p class="card__text">${this._sanitizeHTML(cardObj.description)}</p>
-          <span class="card__source">${this._sanitizeHTML(cardObj.source.name)}</span>
+        <a href="${this._cleanHtmlUpdate(cardObj.url)}" target="_blank" class="card__link">
+          <span class="card__date">${this._cleanHtmlUpdate(setNormalDate(cardObj.publishedAt))}</span>
+          <h3 class="card__title">${this._cleanHtmlUpdate(cardObj.title)}</h3>
+          <p class="card__text">${this._cleanHtmlUpdate(cardObj.description)}</p>
+          <span class="card__source">${this._cleanHtmlUpdate(cardObj.source.name)}</span>
         </a>
       </div>`;
 }
   }
 
-  _sanitizeHTML(str) {
+  _cleanHtmlUpdate(str) {
     const temp = document.createElement('div');
     temp.textContent = str;
     return temp.innerHTML;
@@ -75,7 +75,7 @@ export class NewsCard {
     if(event.target.classList.contains('card__state')) {
       const icon = event.target.closest('.card__state');
       const card = event.target.closest('.card');
-      const cardObj = {
+      const article = {
         keyword: this.searchKeyword,
         title: card.querySelector('.card__title').textContent,
         text: card.querySelector('.card__text').textContent,
@@ -84,7 +84,7 @@ export class NewsCard {
         link: card.querySelector('.card__link').getAttribute('href'),
         image: card.querySelector('.card__photo').getAttribute('src')
       }
-      this.mainApi.createArticle(cardObj).then((data) => {
+      this.mainApi.createArticle(article).then((data) => {
         if (data !== undefined) {
           icon.classList.add('card__state_marked');
         }
