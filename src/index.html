@@ -7,8 +7,8 @@
   <meta name="author" content="Anna Lee">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>News Explorer</title>
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
   <link rel="icon" href="<%=require('./images/favicon.png').default %>">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body class="body-theme">
   <div class="page-wrapper">
@@ -212,6 +212,6 @@
     </div>
   </div>
   <div class="overflow"></div>
-  <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.js[0] %>"></script>
 </body>
 </html>

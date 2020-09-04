@@ -3,7 +3,7 @@ export class MainApi {
     this.options = options;
   }
   // регистрирует нового пользователя
-  signup = (userName, userEmail, userPassword) => {
+  signup = (userName, email, password) => {
     return fetch(`${this.options.URL}/signup`, {
       method: 'POST',
       headers: {
@@ -13,8 +13,8 @@ export class MainApi {
       withCredentials: true,
       body: JSON.stringify({
         name: userName,
-        email: userEmail,
-        password: userPassword
+        email: email,
+        password: password
       }),
     })
     .then((res) => {
@@ -28,7 +28,7 @@ export class MainApi {
     });
   }
  // аутентифицирует пользователя на основе почты и пароля
-  signin = (userEmail, userPassword) => {
+  signin = (email, password) => {
     return fetch(`${this.options.URL}/signin`, {
       method: 'POST',
       credentials: 'include',
@@ -37,8 +37,8 @@ export class MainApi {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: userEmail,
-        password: userPassword
+        email: email,
+        password: password
       })
     })
     .then((res) => {
