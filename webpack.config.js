@@ -61,7 +61,7 @@ module.exports = {
   // plugin - модуль, который преобразует код при компиляции и сборке в целом
   plugins: [
 
-    new MiniCssExtractPlugin({ filename: 'style.[contenthash].css' }),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
 
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
