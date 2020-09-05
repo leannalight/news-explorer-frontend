@@ -49,7 +49,7 @@ const popupSuccessLink = document.querySelector('#successLinkToLogin');
 
 /** Saved articles data */
 const articleTitle = document.querySelector('.articles__title');
-const articleKeywordsArray = document.querySelector('.articles__keyword');
+const articleKeywordsArray = document.querySelectorAll('.articles__keyword');
 
 module.exports = {
   headerTheme,

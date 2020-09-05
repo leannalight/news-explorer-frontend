@@ -55,11 +55,11 @@ export class NewsCard {
             <div class="card__state-delete"></div>
           </div>
         </div>
-        <a href="${this._cleanHtmlUpdate(cardObj.url)}" target="_blank" class="card__link">
-          <span class="card__date">${this._cleanHtmlUpdate(setNormalDate(cardObj.publishedAt))}</span>
+        <a href="${this._cleanHtmlUpdate(cardObj.link)}" target="_blank" class="card__link">
+          <span class="card__date">${this._cleanHtmlUpdate(cardObj.date)}</span>
           <h3 class="card__title">${this._cleanHtmlUpdate(cardObj.title)}</h3>
-          <p class="card__text">${this._cleanHtmlUpdate(cardObj.description)}</p>
-          <span class="card__source">${this._cleanHtmlUpdate(cardObj.source.name)}</span>
+          <p class="card__text">${this._cleanHtmlUpdate(cardObj.text)}</p>
+          <span class="card__source">${this._cleanHtmlUpdate(cardObj.source)}</span>
         </a>
       </div>`;
 }
@@ -98,7 +98,7 @@ export class NewsCard {
     if (event.target.classList.contains('card__state-delete')) {
       if (confirm("Are you sure you want to delete this article?")) {
         const card = event.target.closest('.card');
-        this.mainApi.deleteArticleById(card.articleId).then((data) => {
+        this.mainApi.deleteArticleById(card.id).then((data) => {
           if (data !== undefined) {
             card.remove();
           }
