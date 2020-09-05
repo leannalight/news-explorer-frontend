@@ -48,7 +48,7 @@ export class NewsCard {
     if (statusLogin === objCardStatus.statusCardSaved) {
       return `<div class="card" id="${cardObj._id}">
         <div class="card__image">
-          <img src="${this._cleanHtmlUpdate(image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
+          <img src="${this._cleanHtmlUpdate(cardObj.image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
             <div class="card__name"><span class="card__name-is">${this._cleanHtmlUpdate(cardObj.keyword)}</span></div>
             <div class="card__login card__login_hidden"><span class="card__login-saved">Убрать из сохранённых</span></div>
