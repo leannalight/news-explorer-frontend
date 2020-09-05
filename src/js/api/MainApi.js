@@ -3,7 +3,7 @@ export class MainApi {
     this.options = options;
   }
   // регистрирует нового пользователя
-  signup = (userName, email, password) => {
+  signup = (email, password, userName) => {
     return fetch(`${this.options.URL}/signup`, {
       method: 'POST',
       headers: {
@@ -12,9 +12,9 @@ export class MainApi {
       credentials: 'include',
       withCredentials: true,
       body: JSON.stringify({
-        name: userName,
         email: email,
-        password: password
+        password: password,
+        name: userName,
       }),
     })
     .then((res) => {
