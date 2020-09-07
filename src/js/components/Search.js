@@ -14,11 +14,16 @@ export class Search {
   _findNews = (event) => {
     event.preventDefault();
     const formInput = this.searchForm.querySelector('.search__input');
+
     if (formInput.value === '') {
       formInput.placeholder = 'Search field is empty!';
-      formInput.classList.add('search__input_error'); // красный цвет ошибкт
+      formInput.classList.add('search__input_error'); // красный цвет ошибки
       return;
+    } else {
+      formInput.classList.remove('search__input_error'); // убрать красный цвет
+      formInput.placeholder = 'Введите тему новости';
     }
+
     const button = event.currentTarget;
     this._removeEnabled(button, formInput);
     this._renderLoading(false);

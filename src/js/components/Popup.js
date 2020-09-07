@@ -1,7 +1,10 @@
+import { FormValidator } from "./FormValidator.js";
+
 export class Popup {
   constructor (popupContainer) {
     this.popupContainer = popupContainer;
 
+    this.form = document.querySelector('.popup__form');
     this.listener();
 }
 
@@ -26,6 +29,9 @@ export class Popup {
     const popup1 = event.target.closest('.popup');
     this._removeListenerClose(popup1);
     popup1.classList.remove('popup_shown');
+
+    this.form.reset(); // Добавила очистку формы и ошибок после закрытия
+    FormValidator.prototype.clearErrors();
   }
 
   _addListenerClose = (popup) => {

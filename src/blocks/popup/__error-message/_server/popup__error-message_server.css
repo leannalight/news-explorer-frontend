@@ -1,4 +1,7 @@
 .popup__error-message_server {
+  position: absolute;
+  margin-bottom: 8px;
+  right: 35%;
   font-size: 12px;
   line-height: 15px;
   color: #FF0000;
