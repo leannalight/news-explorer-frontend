@@ -37,14 +37,14 @@ export class SavedNewsData {
       else
         result[a] = 1;
     });
-    const sortable = [];
+    const popularKeywordsArray = [];
     for (let popularKeyword in result) {
-      sortable.push([popularKeyword, result[popularKeyword]]);
+      popularKeywordsArray.push([popularKeyword, result[popularKeyword]]);
     }
-    sortable.sort((a, b) => {
+    popularKeywordsArray.sort((a, b) => {
       return b[1] - a[1];
     })
-    this._setPopularWord(sortable);
+    this._setPopularWord(popularKeywordsArray);
 }
 
   _setPopularWord(sortObj) {

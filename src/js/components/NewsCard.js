@@ -34,7 +34,7 @@ export class NewsCard {
         <div class="card__image">
           <img src="${this._cleanHtmlUpdate(image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
-            <button class="button card__button"></div>
+            <button class="button card__button"></button>
           </div>
         </div>
         <a href="${this._cleanHtmlUpdate(cardObj.url)}" target="_blank" class="card__link">
@@ -70,16 +70,6 @@ export class NewsCard {
     temp.textContent = str;
     return temp.innerHTML;
   }
-/*
-  showTooltip = (event) => {
-    if (event.target.classList.contains('card__button')) {
-      if (statusLogin === objCardStatus.statusCardUnLoggedIn) {
-        const button = event.target.closest('.card__button')
-        const tooltip = event.target.closest('.card__button-tooltip');
-        button.classList.remove('card__button_disabled');
-      }
-    }
-  } */
 
   saveHandler = (event) => {
     if(event.target.classList.contains('card__button')) {
