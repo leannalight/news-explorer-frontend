@@ -4,19 +4,19 @@
 @import url(../card/__name/_shown/card__name_shown.css);
 @import url(../card/__name/_hidden/card__name_hidden.css);
 @import url(../card/__name-is/card__name-is.css);
-@import url(../card/__login/card__login.css);
-@import url(../card/__login/_hidden/card__login_hidden.css);
-@import url(../card/__set/card__set.css);
-@import url(../card/__login-text/card__login-text.css);
-@import url(../card/__login-saved/card__login-saved.css);
-@import url(../card/__state/card__state.css);
-@import url(../card/__state-delete/card__state-delete.css);
+@import url(../card/__button-tooltip/card__button-tooltip.css);
+@import url(../card/__button-text/card__button-text.css);
+@import url(../card/__button-saved/card__button-saved.css);
+@import url(../card/__button-delete/card__button-delete.css);
 @import url(../card/__info/card__info.css);
 @import url(../card/__date/card__date.css);
 @import url(../card/__title/card__title.css);
 @import url(../card/__text/card__text.css);
 @import url(../card/__source/card__source.css);
 @import url(../card/__link/card__link.css);
+@import url(../card/__button/card__button.css);
+@import url(../card/__set/card__set.css);
+@import url(../card/__set/_hidden/card__set_hidden.css);
 
 .card {
   max-width: 400px;

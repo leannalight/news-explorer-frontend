@@ -7,6 +7,9 @@
   margin: 0;
   padding: 24px 24px;
 }
+.card__set:hover .card__button_disabled {
+  display: block;
+}
 
 @media screen and (max-width: 1024px) {
   .card__set {

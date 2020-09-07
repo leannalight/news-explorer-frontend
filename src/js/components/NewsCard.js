@@ -16,9 +16,9 @@ export class NewsCard {
         <div class="card__image">
           <img src="${this._cleanHtmlUpdate(image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
-            <div class="card__login card__login_hidden"><span class="card__login-text">Войдите, чтобы
-              сохранять статьи</span></div>
-            <div class="card__state" disabled></div>
+            <button class="button card__button-tooltip card__button_disabled"><span class="card__button-text card__button_disabled">Войдите, чтобы
+              сохранять статьи</span></button>
+            <button class="button card__button" disabled></button>
           </div>
         </div>
         <a href="${this._cleanHtmlUpdate(cardObj.url)}" target="_blank" class="card__link">
@@ -34,7 +34,7 @@ export class NewsCard {
         <div class="card__image">
           <img src="${this._cleanHtmlUpdate(image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
-            <div class="card__state"></div>
+            <button class="button card__button"></div>
           </div>
         </div>
         <a href="${this._cleanHtmlUpdate(cardObj.url)}" target="_blank" class="card__link">
@@ -51,8 +51,8 @@ export class NewsCard {
           <img src="${this._cleanHtmlUpdate(cardObj.image)}" alt="${(this._cleanHtmlUpdate(cardObj.title))}" class="card__photo">
           <div class="card__set">
             <div class="card__name"><span class="card__name-is">${this._cleanHtmlUpdate(cardObj.keyword)}</span></div>
-            <div class="card__login card__login_hidden"><span class="card__login-saved">Убрать из сохранённых</span></div>
-            <div class="card__state-delete"></div>
+            <button class="button card__button-tooltip card__button_disabled"><span class="card__button-saved card__button_disabled">Убрать из сохранённых</span></button>
+            <button class="button card__button-delete"></button>
           </div>
         </div>
         <a href="${this._cleanHtmlUpdate(cardObj.link)}" target="_blank" class="card__link">
@@ -70,10 +70,20 @@ export class NewsCard {
     temp.textContent = str;
     return temp.innerHTML;
   }
+/*
+  showTooltip = (event) => {
+    if (event.target.classList.contains('card__button')) {
+      if (statusLogin === objCardStatus.statusCardUnLoggedIn) {
+        const button = event.target.closest('.card__button')
+        const tooltip = event.target.closest('.card__button-tooltip');
+        button.classList.remove('card__button_disabled');
+      }
+    }
+  } */
 
   saveHandler = (event) => {
-    if(event.target.classList.contains('card__state')) {
-      const icon = event.target.closest('.card__state');
+    if(event.target.classList.contains('card__button')) {
+      const button = event.target.closest('.card__button');
       const card = event.target.closest('.card');
       const article = {
         keyword: this.searchKeyword,
@@ -86,7 +96,7 @@ export class NewsCard {
       }
       this.mainApi.createArticle(article).then((data) => {
         if (data !== undefined) {
-          icon.classList.add('card__state_marked');
+          button.classList.add('card__button_marked');
         }
       }).catch((err) => {
         console.log(err);
@@ -95,7 +105,7 @@ export class NewsCard {
   }
   // Удаление карточки
   removeCard = (event) => {
-    if (event.target.classList.contains('card__state-delete')) {
+    if (event.target.classList.contains('card__button-delete')) {
       if (confirm("Are you sure you want to delete this article?")) {
         const card = event.target.closest('.card');
         this.mainApi.deleteArticleById(card.id).then((data) => {
