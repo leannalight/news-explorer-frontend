@@ -15,7 +15,8 @@ export class Search {
     event.preventDefault();
     const formInput = this.searchForm.querySelector('.search__input');
     if (formInput.value === '') {
-      alert('Search field is empty')
+      formInput.placeholder = 'Search field is empty!';
+      formInput.classList.add('search__input_error'); // красный цвет ошибкт
       return;
     }
     const button = event.currentTarget;
