@@ -1,0 +1,9 @@
+.popup__button_disabled {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+  background: #E6E8EB;
+  border: none;
+  box-shadow: none;
+}

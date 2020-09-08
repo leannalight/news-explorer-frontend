@@ -16,3 +16,9 @@
   justify-content: center;
   color: #1A1B22;
 }
+
+.menu__button_theme_black::after {
+  content: url('../../../../images/logout_blck.svg');
+  margin-left: 5px;
+  top: 2px;
+}

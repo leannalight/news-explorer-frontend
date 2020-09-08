@@ -1,4 +1,4 @@
-.card__state {
+.card__button {
   background: #fff;
   border-radius: 8px;
   width: 40px;
@@ -7,13 +7,13 @@
   background-image: url('../../../images/bookmark.svg');
   background-position: center;
   background-repeat: no-repeat;
+  border: none;
 }
 
-.card__state:hover {
+.card__button:hover {
   background-image: url('../../../images/bookmark_hover.svg');
-  cursor: pointer;
 }
 
-.card__state_marked {
+.card__button_marked {
   background-image: url('../../../images/bookmark_marked.svg');
 }
